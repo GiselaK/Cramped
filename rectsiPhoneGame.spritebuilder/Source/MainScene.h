@@ -12,6 +12,6 @@
     NSTimer *TimeOfActiveUser;
 
 }
-
+-(void) shouldspawn;
 
 @end

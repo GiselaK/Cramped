@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80220FE1196DCF82006CC5D3 /* shapeGrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 80220FE0196DCF82006CC5D3 /* shapeGrow.m */; };
+		80220FE1196DCF82006CC5D3 /* ShapeGrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 80220FE0196DCF82006CC5D3 /* ShapeGrow.m */; };
 		80AFFA4F196C4ED700B02012 /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AFFA4E196C4ED700B02012 /* Triangle.m */; };
 		80AFFA53196C529100B02012 /* Pentagon.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AFFA52196C529100B02012 /* Pentagon.m */; };
 		80AFFA56196C532600B02012 /* Hexagon.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AFFA55196C532600B02012 /* Hexagon.m */; };
@@ -61,8 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		80220FDF196DCF82006CC5D3 /* shapeGrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shapeGrow.h; sourceTree = "<group>"; };
-		80220FE0196DCF82006CC5D3 /* shapeGrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shapeGrow.m; sourceTree = "<group>"; };
+		80220FDF196DCF82006CC5D3 /* ShapeGrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeGrow.h; sourceTree = "<group>"; };
+		80220FE0196DCF82006CC5D3 /* ShapeGrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeGrow.m; sourceTree = "<group>"; };
 		80AFFA4D196C4ED700B02012 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		80AFFA4E196C4ED700B02012 /* Triangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Triangle.m; sourceTree = "<group>"; };
 		80AFFA51196C529100B02012 /* Pentagon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pentagon.h; sourceTree = "<group>"; };
@@ -129,6 +129,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		807B1E94196E16AE00D578B7 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				80CB6DBD1966207600B466BE /* Rectangle.h */,
+				80CB6DBE1966207600B466BE /* Rectangle.m */,
+				80220FDF196DCF82006CC5D3 /* ShapeGrow.h */,
+				80220FE0196DCF82006CC5D3 /* ShapeGrow.m */,
+				80AFFA4D196C4ED700B02012 /* Triangle.h */,
+				80AFFA4E196C4ED700B02012 /* Triangle.m */,
+				80AFFA51196C529100B02012 /* Pentagon.h */,
+				80AFFA52196C529100B02012 /* Pentagon.m */,
+				80AFFA54196C532600B02012 /* Hexagon.h */,
+				80AFFA55196C532600B02012 /* Hexagon.m */,
+			);
+			name = Shapes;
+			sourceTree = "<group>";
+		};
 		9222E2B918734FF800A246C7 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,20 +157,12 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				807B1E94196E16AE00D578B7 /* Shapes */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
-				B7378992180767190076A88C /* MainScene.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
+				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
-				80CB6DBD1966207600B466BE /* Rectangle.h */,
-				80CB6DBE1966207600B466BE /* Rectangle.m */,
-				80220FDF196DCF82006CC5D3 /* shapeGrow.h */,
-				80220FE0196DCF82006CC5D3 /* shapeGrow.m */,
-				80AFFA4D196C4ED700B02012 /* Triangle.h */,
-				80AFFA51196C529100B02012 /* Pentagon.h */,
-				80AFFA54196C532600B02012 /* Hexagon.h */,
-				80AFFA55196C532600B02012 /* Hexagon.m */,
-				80AFFA52196C529100B02012 /* Pentagon.m */,
-				80AFFA4E196C4ED700B02012 /* Triangle.m */,
+				B73789911807667A0076A88C /* Icons */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -185,6 +194,7 @@
 				B737896E180762440076A88C /* Default@2x.png */,
 			);
 			name = Icons;
+			path = Source/Resources;
 			sourceTree = "<group>";
 		};
 		B77F1B2517B978D7009739AE = {
@@ -228,7 +238,6 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B73789911807667A0076A88C /* Icons */,
 				B737893A180761570076A88C /* Published-iOS */,
 			);
 			name = Resources;
@@ -371,7 +380,7 @@
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				80AFFA53196C529100B02012 /* Pentagon.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
-				80220FE1196DCF82006CC5D3 /* shapeGrow.m in Sources */,
+				80220FE1196DCF82006CC5D3 /* ShapeGrow.m in Sources */,
 				80CB6DBF1966207600B466BE /* Rectangle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

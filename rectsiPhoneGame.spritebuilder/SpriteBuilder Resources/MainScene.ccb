@@ -10,11 +10,11 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>36</integer>
+	<integer>41</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>currentSequenceId</key>
 	<integer>0</integer>
 	<key>docDimensionsType</key>
@@ -43,7 +43,7 @@
 		<array>
 			<dict>
 				<key>UUID</key>
-				<integer>35</integer>
+				<integer>38</integer>
 				<key>baseClass</key>
 				<string>CCBFile</string>
 				<key>children</key>
@@ -51,7 +51,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCBFile</string>
+				<string>Triangle</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -73,11 +73,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>424.91665649414062</real>
-							<real>155.93980407714844</real>
+							<real>0.5</real>
+							<real>0.5</real>
 							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -87,8 +87,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1.7400000095367432</real>
-							<real>2</real>
+							<real>0.55244648456573486</real>
+							<real>0.51555567979812622</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -100,70 +100,6 @@
 						<string>CCBFile</string>
 						<key>value</key>
 						<string>Tri.ccb</string>
-					</dict>
-				</array>
-				<key>selected</key>
-				<true/>
-			</dict>
-			<dict>
-				<key>UUID</key>
-				<integer>34</integer>
-				<key>baseClass</key>
-				<string>CCBFile</string>
-				<key>children</key>
-				<array/>
-				<key>customClass</key>
-				<string></string>
-				<key>displayName</key>
-				<string>CCBFile</string>
-				<key>memberVarAssignmentName</key>
-				<string></string>
-				<key>memberVarAssignmentType</key>
-				<integer>1</integer>
-				<key>properties</key>
-				<array>
-					<dict>
-						<key>name</key>
-						<string>name</string>
-						<key>type</key>
-						<string>StringSimple</string>
-						<key>value</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>position</string>
-						<key>type</key>
-						<string>Position</string>
-						<key>value</key>
-						<array>
-							<real>159.7962646484375</real>
-							<real>167.82408142089844</real>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>scale</string>
-						<key>type</key>
-						<string>ScaleLock</string>
-						<key>value</key>
-						<array>
-							<real>1</real>
-							<real>1</real>
-							<false/>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>ccbFile</string>
-						<key>type</key>
-						<string>CCBFile</string>
-						<key>value</key>
-						<string>rect.ccb</string>
 					</dict>
 				</array>
 			</dict>
@@ -238,6 +174,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -305,9 +243,9 @@
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
-			<real>0.38020849227905273</real>
+			<real>0.0</real>
 			<key>position</key>
-			<real>5.3333334922790527</real>
+			<real>0.23333333432674408</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

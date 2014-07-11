@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "shapeGrow.h"
+#import "ShapeGrow.h"
 
-@interface Rectangle : CCNode {
-        NSTimer *TimeOfActiveUser;
+@interface Rectangle : ShapeGrow {
 }
 
 @end
