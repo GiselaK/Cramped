@@ -132,8 +132,8 @@
 		807B1E94196E16AE00D578B7 /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
-				80CB6DBD1966207600B466BE /* Rectangle.h */,
 				80CB6DBE1966207600B466BE /* Rectangle.m */,
+				80CB6DBD1966207600B466BE /* Rectangle.h */,
 				80220FDF196DCF82006CC5D3 /* ShapeGrow.h */,
 				80220FE0196DCF82006CC5D3 /* ShapeGrow.m */,
 				80AFFA4D196C4ED700B02012 /* Triangle.h */,
@@ -141,6 +141,7 @@
 				80AFFA51196C529100B02012 /* Pentagon.h */,
 				80AFFA52196C529100B02012 /* Pentagon.m */,
 				80AFFA54196C532600B02012 /* Hexagon.h */,
+				B73789911807667A0076A88C /* Icons */,
 				80AFFA55196C532600B02012 /* Hexagon.m */,
 			);
 			name = Shapes;
@@ -162,7 +163,6 @@
 				B737893E1807617C0076A88C /* AppDelegate.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
-				B73789911807667A0076A88C /* Icons */,
 			);
 			name = Source;
 			sourceTree = "<group>";

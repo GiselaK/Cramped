@@ -87,6 +87,8 @@
 			<key>previewFolderHidden</key>
 			<true/>
 		</dict>
+		<key>ccbResources/Triangle.png</key>
+		<dict/>
 		<key>ccbResources/ccbButtonHighlighted.png</key>
 		<dict>
 			<key>scaleFrom</key>

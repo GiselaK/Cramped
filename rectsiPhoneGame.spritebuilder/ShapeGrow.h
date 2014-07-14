@@ -1,3 +1,4 @@
+
 //
 //  shapeGrow.h
 //  rectsiPhoneGame
@@ -8,10 +9,10 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "MainScene.h"
+@class MainScene;
 
 @interface ShapeGrow : CCNode {
     NSTimer *TimeOfActiveUser;
 }
-@property (nonatomic,retain) MainScene* shapegrow;
+@property (nonatomic,retain) MainScene* mainscene;
 @end

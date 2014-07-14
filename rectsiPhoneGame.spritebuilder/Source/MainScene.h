@@ -7,11 +7,13 @@
 //
 
 #import "CCNode.h"
+#import "ShapeGrow.h"
 
 @interface MainScene : CCNode{
     NSTimer *TimeOfActiveUser;
 
 }
--(void) shouldspawn;
+- (void)shapeSpawn;
+
 
 @end

@@ -10,16 +10,17 @@
 #import "MainScene.h"
 @implementation ShapeGrow{
     BOOL stopGrowth;
-    MainScene *_mainscene;
+    int rotationAngle;
+//    MainScene* _mainscene;
 }
 
 -(void)onEnter{
     [super onEnter];
+//    _mainscene= [[MainScene alloc]init];
     self.userInteractionEnabled = TRUE;
-    CCLOG(@"newshapegrow");
-    _mainscene = [[MainScene alloc]init];
     //when this file is opened
     BOOL BeginGrowth=TRUE;
+    rotationAngle=1;
     //shape grows
     //make shape random color
     //Pick position
@@ -38,16 +39,21 @@
     CCLOG(@"touching");
     stopGrowth=TRUE;
     shapeSize=0.001;
-        [_mainscene shouldspawn];
-    stopGrowth=FALSE;
+    [self.mainscene shapeSpawn];
     
 }
 float shapeSize;
 - (void)growRect{
     //Increase size during growth
     if(stopGrowth==FALSE){
+//        self.color=[CCColor redColor];
         shapeSize+=0.001;
         self.scale=shapeSize;
+        self.rotation+=0.5;
+        if (self.rotation>360){
+            self.rotation=1;
+        }
+        
     }
 }
 
