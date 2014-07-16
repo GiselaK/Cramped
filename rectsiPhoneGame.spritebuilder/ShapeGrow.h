@@ -11,8 +11,9 @@
 #import "cocos2d.h"
 @class MainScene;
 
-@interface ShapeGrow : CCNode {
+@interface ShapeGrow : CCNode <CCPhysicsCollisionDelegate>{
     NSTimer *TimeOfActiveUser;
 }
+
 @property (nonatomic,retain) MainScene* mainscene;
 @end

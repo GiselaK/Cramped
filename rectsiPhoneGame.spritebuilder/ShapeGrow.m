@@ -11,6 +11,7 @@
 @implementation ShapeGrow{
     BOOL stopGrowth;
     int rotationAngle;
+
 //    MainScene* _mainscene;
 }
 
@@ -36,7 +37,7 @@
     
 }
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    CCLOG(@"touching");
+
     stopGrowth=TRUE;
     shapeSize=0.001;
     [self.mainscene shapeSpawn];
@@ -47,8 +48,8 @@ float shapeSize;
     //Increase size during growth
     if(stopGrowth==FALSE){
 //        self.color=[CCColor redColor];
-        shapeSize+=0.001;
-        self.scale=shapeSize;
+//        shapeSize+=0.001;
+//        self.scale=shapeSize;
         self.rotation+=0.5;
         if (self.rotation>360){
             self.rotation=1;
@@ -56,5 +57,6 @@ float shapeSize;
         
     }
 }
+
 
 @end

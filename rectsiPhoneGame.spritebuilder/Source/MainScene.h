@@ -9,9 +9,8 @@
 #import "CCNode.h"
 #import "ShapeGrow.h"
 
-@interface MainScene : CCNode{
+@interface MainScene : CCNode <CCPhysicsCollisionDelegate> {
     NSTimer *TimeOfActiveUser;
-
 }
 - (void)shapeSpawn;
 
