@@ -13,6 +13,6 @@
     NSTimer *TimeOfActiveUser;
 }
 - (void)shapeSpawn;
-
-
+- (void)updateRect;
+- (void)updateTri;
 @end

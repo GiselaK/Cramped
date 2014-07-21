@@ -8,10 +8,13 @@
 
 #import "ShapeGrow.h"
 #import "MainScene.h"
+extern int pickShape;
+extern BOOL allowUpdates;
+extern BOOL checkCollision;
+extern BOOL playButton;
 @implementation ShapeGrow{
     BOOL stopGrowth;
-    int rotationAngle;
-
+    BOOL gameStarted;
 //    MainScene* _mainscene;
 }
 
@@ -20,42 +23,40 @@
 //    _mainscene= [[MainScene alloc]init];
     self.userInteractionEnabled = TRUE;
     //when this file is opened
-    BOOL BeginGrowth=TRUE;
-    rotationAngle=1;
     //shape grows
     //make shape random color
     //Pick position
-    if(BeginGrowth==TRUE){
-        [NSTimer scheduledTimerWithTimeInterval:0.002
-                                         target:self
-                                       selector:@selector(growRect)
-                                       userInfo:nil
-                                        repeats:YES];
-        //grown speed
-        BeginGrowth=FALSE;
-    }
+
+        if(allowUpdates==TRUE){
+            [self schedule:@selector(growRect) interval:0.05];        //grown speed
+        }
     
 }
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-
-    stopGrowth=TRUE;
-    shapeSize=0.001;
-    [self.mainscene shapeSpawn];
+    if (!playButton){
+        stopGrowth=TRUE;
+        checkCollision=TRUE;
+        [self.mainscene shapeSpawn];
+    }
+    else{
+        playButton=FALSE;
+    }
     
 }
-float shapeSize;
+- (void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
+    checkCollision=FALSE;
+}
 - (void)growRect{
     //Increase size during growth
-    if(stopGrowth==FALSE){
-//        self.color=[CCColor redColor];
-//        shapeSize+=0.001;
-//        self.scale=shapeSize;
-        self.rotation+=0.5;
-        if (self.rotation>360){
-            self.rotation=1;
+        if(stopGrowth==FALSE){
+            if(pickShape==1){
+                [self.mainscene updateRect];
+            }
+            else{
+                [self.mainscene updateTri];
+            }
         }
-        
-    }
+    
 }
 
 

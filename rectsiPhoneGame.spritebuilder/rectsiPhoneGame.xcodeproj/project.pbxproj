@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80220FE1196DCF82006CC5D3 /* ShapeGrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 80220FE0196DCF82006CC5D3 /* ShapeGrow.m */; };
+		8074A9A11977444B00835ED3 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8074A9A01977444B00835ED3 /* GameOver.m */; };
 		80AFFA4F196C4ED700B02012 /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AFFA4E196C4ED700B02012 /* Triangle.m */; };
 		80AFFA53196C529100B02012 /* Pentagon.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AFFA52196C529100B02012 /* Pentagon.m */; };
 		80AFFA56196C532600B02012 /* Hexagon.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AFFA55196C532600B02012 /* Hexagon.m */; };
@@ -63,6 +64,8 @@
 /* Begin PBXFileReference section */
 		80220FDF196DCF82006CC5D3 /* ShapeGrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeGrow.h; sourceTree = "<group>"; };
 		80220FE0196DCF82006CC5D3 /* ShapeGrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeGrow.m; sourceTree = "<group>"; };
+		8074A99F1977444B00835ED3 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
+		8074A9A01977444B00835ED3 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
 		80AFFA4D196C4ED700B02012 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		80AFFA4E196C4ED700B02012 /* Triangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Triangle.m; sourceTree = "<group>"; };
 		80AFFA51196C529100B02012 /* Pentagon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pentagon.h; sourceTree = "<group>"; };
@@ -141,8 +144,8 @@
 				80AFFA51196C529100B02012 /* Pentagon.h */,
 				80AFFA52196C529100B02012 /* Pentagon.m */,
 				80AFFA54196C532600B02012 /* Hexagon.h */,
-				B73789911807667A0076A88C /* Icons */,
 				80AFFA55196C532600B02012 /* Hexagon.m */,
+				B73789911807667A0076A88C /* Icons */,
 			);
 			name = Shapes;
 			sourceTree = "<group>";
@@ -163,6 +166,8 @@
 				B737893E1807617C0076A88C /* AppDelegate.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
+				8074A99F1977444B00835ED3 /* GameOver.h */,
+				8074A9A01977444B00835ED3 /* GameOver.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				80AFFA4F196C4ED700B02012 /* Triangle.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				80AFFA56196C532600B02012 /* Hexagon.m in Sources */,
+				8074A9A11977444B00835ED3 /* GameOver.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				80AFFA53196C529100B02012 /* Pentagon.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
@@ -483,7 +489,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = rectsiPhoneGame;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "D0190417-620E-479A-82FE-5BF5C154209A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -514,7 +520,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = rectsiPhoneGame;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "D0190417-620E-479A-82FE-5BF5C154209A";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
