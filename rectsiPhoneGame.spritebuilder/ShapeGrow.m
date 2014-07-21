@@ -12,6 +12,7 @@ extern int pickShape;
 extern BOOL allowUpdates;
 extern BOOL checkCollision;
 extern BOOL playButton;
+extern BOOL gameEnd;
 @implementation ShapeGrow{
     BOOL stopGrowth;
     BOOL gameStarted;
@@ -33,13 +34,15 @@ extern BOOL playButton;
     
 }
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    if (!playButton){
-        stopGrowth=TRUE;
-        checkCollision=TRUE;
-        [self.mainscene shapeSpawn];
-    }
-    else{
-        playButton=FALSE;
+    if(!gameEnd){
+        if (!playButton){
+            stopGrowth=TRUE;
+            checkCollision=TRUE;
+            [self.mainscene shapeSpawn];
+        }
+        else{
+            playButton=FALSE;
+        }
     }
     
 }

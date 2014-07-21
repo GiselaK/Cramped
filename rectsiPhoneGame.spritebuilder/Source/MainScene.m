@@ -16,6 +16,8 @@ BOOL allowUpdates=TRUE;
 int pickShape;
 BOOL checkCollision=TRUE;
 BOOL playButton=TRUE;
+BOOL gameEndControl;
+BOOL gameEnd;
 @implementation MainScene
 {
     Rectangle *_currentRect;
@@ -24,7 +26,6 @@ BOOL playButton=TRUE;
     int rect;
     int tri;
     int rotationAmt;
-    bool gameEnd;
 }
 - (void)didLoadFromCCB {
     _physicsNode= [CCPhysicsNode node];
@@ -40,8 +41,10 @@ BOOL playButton=TRUE;
 }
 -(void) startScreen{
     _currentTri = (Triangle*) [CCBReader load:@"tri"];
+    shapeSize=0.2;
+    _currentTri.scale=shapeSize;
+    _currentTri.rotation=90;
     _currentTri.position = ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2);
-    _currentTri.scale=1000;
     _currentTri.mainscene= self;
     _currentTri.physicsBody.collisionType = @"Triangle";
     _currentTri.physicsBody.sensor=TRUE;
@@ -94,7 +97,6 @@ BOOL playButton=TRUE;
 }
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair Rectangle:(CCNode *)Rectangle wildcard:(CCNode *)nodeB {
     gameEnd=true;
-        NSLog(@"Game Over");
         return TRUE;
 
 }
@@ -127,9 +129,6 @@ BOOL playButton=TRUE;
         }
     }
     else{
-        shapeSize=0.2;
-        _currentTri.scale=shapeSize;
-        _currentTri.rotation=90;
     }
     _currentTri.mainscene= self;
     _currentTri.physicsBody.collisionType = @"Triangle";
@@ -139,10 +138,12 @@ BOOL playButton=TRUE;
 }
 
 -(void)gameEnd{
-    if (gameEnd){
+    if (gameEnd && !gameEndControl){
         GameOver *_gameOver= (GameOver*) [CCBReader load:@"GameOver"];
         [self addChild:_gameOver];
         _gameOver.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2);
+        [self startScreen];
+        gameEndControl=TRUE;
     }
 }
 //-(void)checkGrowth{
