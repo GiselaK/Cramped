@@ -1,16 +1,16 @@
 //
-//  GameOver.h
+//  startTri.h
 //  rectsiPhoneGame
 //
-//  Created by Gisela Kottmeier on 7/16/14.
+//  Created by Gisela Kottmeier on 7/28/14.
 //  Copyright 2014 Apportable. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 @class MainScene;
-@interface GameOver : CCNode {
-    NSTimer *TimeOfActiveUser;
+@interface startTri : CCNode {
+     NSTimer *TimeOfActiveUser;
 }
 @property (nonatomic,retain) MainScene* mainscene;
 @end

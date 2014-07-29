@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		80220FE1196DCF82006CC5D3 /* ShapeGrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 80220FE0196DCF82006CC5D3 /* ShapeGrow.m */; };
 		8074A9A11977444B00835ED3 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8074A9A01977444B00835ED3 /* GameOver.m */; };
+		8077C3E2197DAC0500DFF999 /* BeginGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8077C3E1197DAC0500DFF999 /* BeginGame.m */; };
+		8087C53D1986CDB000CB94D9 /* startTri.m in Sources */ = {isa = PBXBuildFile; fileRef = 8087C53C1986CDB000CB94D9 /* startTri.m */; };
+		80A020EC19816FFA006E4626 /* BorderLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A020EB19816FFA006E4626 /* BorderLine.m */; };
 		80AFFA4F196C4ED700B02012 /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AFFA4E196C4ED700B02012 /* Triangle.m */; };
 		80AFFA53196C529100B02012 /* Pentagon.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AFFA52196C529100B02012 /* Pentagon.m */; };
 		80AFFA56196C532600B02012 /* Hexagon.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AFFA55196C532600B02012 /* Hexagon.m */; };
@@ -66,6 +69,12 @@
 		80220FE0196DCF82006CC5D3 /* ShapeGrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeGrow.m; sourceTree = "<group>"; };
 		8074A99F1977444B00835ED3 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
 		8074A9A01977444B00835ED3 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
+		8077C3E0197DAC0500DFF999 /* BeginGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeginGame.h; sourceTree = "<group>"; };
+		8077C3E1197DAC0500DFF999 /* BeginGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeginGame.m; sourceTree = "<group>"; };
+		8087C53B1986CDB000CB94D9 /* startTri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = startTri.h; sourceTree = "<group>"; };
+		8087C53C1986CDB000CB94D9 /* startTri.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = startTri.m; sourceTree = "<group>"; };
+		80A020EA19816FFA006E4626 /* BorderLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderLine.h; sourceTree = "<group>"; };
+		80A020EB19816FFA006E4626 /* BorderLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderLine.m; sourceTree = "<group>"; };
 		80AFFA4D196C4ED700B02012 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		80AFFA4E196C4ED700B02012 /* Triangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Triangle.m; sourceTree = "<group>"; };
 		80AFFA51196C529100B02012 /* Pentagon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pentagon.h; sourceTree = "<group>"; };
@@ -136,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				80CB6DBE1966207600B466BE /* Rectangle.m */,
+				8087C53B1986CDB000CB94D9 /* startTri.h */,
+				8087C53C1986CDB000CB94D9 /* startTri.m */,
 				80CB6DBD1966207600B466BE /* Rectangle.h */,
 				80220FDF196DCF82006CC5D3 /* ShapeGrow.h */,
 				80220FE0196DCF82006CC5D3 /* ShapeGrow.m */,
@@ -166,7 +177,11 @@
 				B737893E1807617C0076A88C /* AppDelegate.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
+				80A020EA19816FFA006E4626 /* BorderLine.h */,
+				80A020EB19816FFA006E4626 /* BorderLine.m */,
 				8074A99F1977444B00835ED3 /* GameOver.h */,
+				8077C3E0197DAC0500DFF999 /* BeginGame.h */,
+				8077C3E1197DAC0500DFF999 /* BeginGame.m */,
 				8074A9A01977444B00835ED3 /* GameOver.m */,
 			);
 			name = Source;
@@ -360,7 +375,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		D2E0167A18D782EC00927430 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -381,6 +396,7 @@
 			files = (
 				80AFFA4F196C4ED700B02012 /* Triangle.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
+				80A020EC19816FFA006E4626 /* BorderLine.m in Sources */,
 				80AFFA56196C532600B02012 /* Hexagon.m in Sources */,
 				8074A9A11977444B00835ED3 /* GameOver.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
@@ -388,6 +404,8 @@
 				B73789871807631A0076A88C /* main.m in Sources */,
 				80220FE1196DCF82006CC5D3 /* ShapeGrow.m in Sources */,
 				80CB6DBF1966207600B466BE /* Rectangle.m in Sources */,
+				8087C53D1986CDB000CB94D9 /* startTri.m in Sources */,
+				8077C3E2197DAC0500DFF999 /* BeginGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

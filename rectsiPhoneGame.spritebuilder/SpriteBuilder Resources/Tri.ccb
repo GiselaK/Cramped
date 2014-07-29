@@ -84,7 +84,7 @@
 					<key>collisionMask</key>
 					<array/>
 					<key>collisionType</key>
-					<string>Triangle</string>
+					<string>Shape</string>
 					<key>cornerRadius</key>
 					<real>0.0</real>
 					<key>density</key>
@@ -92,7 +92,7 @@
 					<key>dynamic</key>
 					<true/>
 					<key>elasticity</key>
-					<real>0.30000001192092896</real>
+					<real>0.5</real>
 					<key>friction</key>
 					<real>0.30000001192092896</real>
 					<key>points</key>
@@ -102,32 +102,32 @@
 							<real>322.70474243164062</real>
 						</array>
 						<array>
-							<real>6.4874706268310547</real>
-							<real>375.90512084960938</real>
+							<real>0.24780160188674927</real>
+							<real>370.41070556640625</real>
 						</array>
 						<array>
-							<real>359.83779907226562</real>
-							<real>376.08297729492188</real>
+							<real>353.03573608398438</real>
+							<real>375.8331298828125</real>
 						</array>
 						<array>
-							<real>359.44143676757812</real>
-							<real>320.41336059570312</real>
+							<real>358.90322875976562</real>
+							<real>320.79034423828125</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>359.44143676757812</real>
-								<real>320.41336059570312</real>
+								<real>358.90322875976562</real>
+								<real>320.79034423828125</real>
 							</array>
 							<array>
-								<real>359.83779907226562</real>
-								<real>376.08297729492188</real>
+								<real>353.03573608398438</real>
+								<real>375.8331298828125</real>
 							</array>
 							<array>
-								<real>6.4874706268310547</real>
-								<real>375.90512084960938</real>
+								<real>0.24780160188674927</real>
+								<real>370.41070556640625</real>
 							</array>
 							<array>
 								<real>0.85367012023925781</real>
@@ -153,8 +153,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>104.80000305175781</real>
-							<real>179.10000610351562</real>
+							<real>99.800003051757812</real>
+							<real>184.10000610351562</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -246,7 +246,7 @@
 					<key>collisionMask</key>
 					<array/>
 					<key>collisionType</key>
-					<string>Triangle</string>
+					<string>Shape</string>
 					<key>cornerRadius</key>
 					<real>0.0</real>
 					<key>density</key>
@@ -254,46 +254,46 @@
 					<key>dynamic</key>
 					<true/>
 					<key>elasticity</key>
-					<real>0.30000001192092896</real>
+					<real>0.5</real>
 					<key>friction</key>
 					<real>0.30000001192092896</real>
 					<key>points</key>
 					<array>
 						<array>
-							<real>5.9351887702941895</real>
-							<real>324.09475708007812</real>
+							<real>0.0067180688492953777</real>
+							<real>321.8323974609375</real>
 						</array>
 						<array>
-							<real>5.8824596405029297</real>
-							<real>377.45480346679688</real>
+							<real>-0.016565598547458649</real>
+							<real>372.93069458007812</real>
 						</array>
 						<array>
-							<real>360.18170166015625</real>
-							<real>376.47869873046875</real>
+							<real>354.07418823242188</real>
+							<real>374.94827270507812</real>
 						</array>
 						<array>
-							<real>359.9412841796875</real>
-							<real>320.54888916015625</real>
+							<real>360.00161743164062</real>
+							<real>321.31869506835938</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>359.9412841796875</real>
-								<real>320.54888916015625</real>
+								<real>360.00161743164062</real>
+								<real>321.31869506835938</real>
 							</array>
 							<array>
-								<real>360.18170166015625</real>
-								<real>376.47869873046875</real>
+								<real>354.07418823242188</real>
+								<real>374.94827270507812</real>
 							</array>
 							<array>
-								<real>5.8824596405029297</real>
-								<real>377.45480346679688</real>
+								<real>-0.016565598547458649</real>
+								<real>372.93069458007812</real>
 							</array>
 							<array>
-								<real>5.9351887702941895</real>
-								<real>324.09475708007812</real>
+								<real>0.0067180688492953777</real>
+								<real>321.8323974609375</real>
 							</array>
 						</array>
 					</array>
@@ -315,8 +315,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>215.5</real>
-							<real>0.14999642968177795</real>
+							<real>200</real>
+							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -410,7 +410,7 @@
 					<key>collisionMask</key>
 					<array/>
 					<key>collisionType</key>
-					<string>Triangle</string>
+					<string>Shape</string>
 					<key>cornerRadius</key>
 					<real>0.0</real>
 					<key>density</key>
@@ -418,46 +418,46 @@
 					<key>dynamic</key>
 					<true/>
 					<key>elasticity</key>
-					<real>0.30000001192092896</real>
+					<real>0.5</real>
 					<key>friction</key>
 					<real>0.30000001192092896</real>
 					<key>points</key>
 					<array>
 						<array>
-							<real>0.092915520071983337</real>
-							<real>321.85693359375</real>
+							<real>6.3767657279968262</real>
+							<real>323.50924682617188</real>
 						</array>
 						<array>
-							<real>-0.02440306730568409</real>
-							<real>378.11514282226562</real>
+							<real>0.049085456877946854</real>
+							<real>378.16067504882812</real>
 						</array>
 						<array>
-							<real>349.71725463867188</real>
-							<real>376.77041625976562</real>
+							<real>359.98202514648438</real>
+							<real>377.36575317382812</real>
 						</array>
 						<array>
-							<real>349.80862426757812</real>
-							<real>321.36245727539062</real>
+							<real>360.08309936523438</real>
+							<real>325.96649169921875</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>349.80862426757812</real>
-								<real>321.36245727539062</real>
+								<real>360.08309936523438</real>
+								<real>325.96649169921875</real>
 							</array>
 							<array>
-								<real>349.71725463867188</real>
-								<real>376.77041625976562</real>
+								<real>359.98202514648438</real>
+								<real>377.36575317382812</real>
 							</array>
 							<array>
-								<real>-0.02440306730568409</real>
-								<real>378.11514282226562</real>
+								<real>0.049085456877946854</real>
+								<real>378.16067504882812</real>
 							</array>
 							<array>
-								<real>0.092915520071983337</real>
-								<real>321.85693359375</real>
+								<real>6.3767657279968262</real>
+								<real>323.50924682617188</real>
 							</array>
 						</array>
 					</array>
@@ -479,8 +479,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>304.79998779296875</real>
-							<real>178.74996948242188</real>
+							<real>300.29473876953125</real>
+							<real>173.10000610351562</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -584,8 +584,8 @@
 				<string>Size</string>
 				<key>value</key>
 				<array>
-					<real>420</real>
-					<real>357</real>
+					<real>410</real>
+					<real>359</real>
 					<integer>0</integer>
 					<integer>0</integer>
 				</array>
@@ -668,9 +668,9 @@
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
-			<real>0.059378623962402344</real>
+			<real>2.0484375953674316</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>4.4000000953674316</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

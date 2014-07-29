@@ -15,4 +15,7 @@
 - (void)shapeSpawn;
 - (void)updateRect;
 - (void)updateTri;
+- (void)playClicked;
+//@selector[growRect];
+
 @end
