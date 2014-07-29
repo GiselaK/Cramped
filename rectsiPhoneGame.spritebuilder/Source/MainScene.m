@@ -37,23 +37,18 @@ CGPoint touchLocation;
     BOOL stopGrowth;
     float shapeSize;
     int pickShape;
-    int rect;
     int rotationAmt;
-    int tri;
+    int rotationDir;
 }
 - (void)didLoadFromCCB {
     _physicsNode= [CCPhysicsNode node];
     _physicsNode.collisionDelegate = self;
     [self addChild:_physicsNode];
-//    _begPhysicsNode= [CCPhysicsNode node];
-//    _begPhysicsNode.collisionDelegate = self;
-    rect=1;
-    tri=1;
-     _physicsNode.debugDraw= TRUE;
-//    _begPhysicsNode.debugDraw = TRUE;
-    
+    //    create physics node & make it a child of mainscene
+    _physicsNode.debugDraw= TRUE;
+    // Debug tool AMAZING
     playButtonOrNah=TRUE;
-    
+    // set bool that detects whether or not the triangle is a play button to true
     _currentTri = (Triangle*) [CCBReader load:@"tri"];
     _currentRect = (Rectangle*) [CCBReader load:@"rect"];
     _playTri = (startTri*) [CCBReader load:@"startTri"];
@@ -61,17 +56,23 @@ CGPoint touchLocation;
     _playRect2 = (BorderLine*) [CCBReader load:@"BorderLine"];
     _playRect3 = (BorderLine*) [CCBReader load:@"BorderLine"];
     _playRect4 = (BorderLine*) [CCBReader load:@"BorderLine"];
+    //load all ccb thingies
 }
 -(void)onEnter{
     [super onEnter];
     self.userInteractionEnabled = TRUE;
+    //allow clickin
     [self startScreen];
+    //load start screen
 }
 -(void) startScreen{
     gameStarted=FALSE;
+    //says that game has not started yet
     beginGameMode=TRUE;
     [self playScreen];
+    //Loads PlayScreen
     [self playButton];
+    //Loads Play Button
 }
 -(void)playScreen{
     _beginGame= (BeginGame*) [CCBReader load:@"PlayScreen"];
@@ -102,10 +103,7 @@ CGPoint touchLocation;
     _playTri.scale=0.2;
     _playTri.rotation=90;
     _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2);
-//    if (_begPhysicsNode.parent) {
-        [self addChild: _playTri];
-//    }
-
+    [self addChild: _playTri];
     //    _currentTri.physicsBody.collisionType = @"Triangle";
     //    _currentTri.physicsBody.sensor=FALSE;
     //     _playRect.mainscene= self;
@@ -114,10 +112,9 @@ CGPoint touchLocation;
     //    _currentTri.physicsBody.sensor=FALSE;
 }
 -(void)playClicked{
-
     [self removeChild:_playTri];
     if (_beginGame.parent){
-      [self removeChild:_beginGame];  
+        [self removeChild:_beginGame];
     }
     if (_gameOver.parent){
         [self removeChild:_gameOver];
@@ -126,40 +123,26 @@ CGPoint touchLocation;
         _physicsNode= [CCPhysicsNode node];
         _physicsNode.collisionDelegate = self;
         [self addChild:_physicsNode];
-}
+    }
     gameEnd=FALSE;
     gameStarted=TRUE;
     gameEndControl=FALSE;
     playButtonOrNah=FALSE;
     shapeSize=0.002;
     stopGrowth=FALSE;
-//    if (!_physicsNode.parent) {
-//        CCLOG(@"INSIDE rec2");
-////        [self addChild:_physicsNode];
-        [self makeBorder];
-        _currentTri.scale=shapeSize;
-        _currentTri.position = ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2);
-        _currentTri.mainscene= self;
-        _currentTri.physicsBody.collisionType = @"Triangle";
-        _currentTri.physicsBody.sensor=TRUE;
-
-    //    [_physicsNode removeFromParent];
-    //
-        [_physicsNode addChild: _currentTri];
-//        [_physicsNode addChild: _playRect1];
-//        [_physicsNode addChild: _playRect2];
-//        [_physicsNode addChild: _playRect3];
-//        [_physicsNode addChild: _playRect4];
-        CCLOG(@"INSIDE rec3");
-
-//    }
+    [self makeBorder];
+    _currentTri.scale=shapeSize;
+    _currentTri.position = ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2);
+    _currentTri.mainscene= self;
+    _currentTri.physicsBody.collisionType = @"Triangle";
+    _currentTri.physicsBody.sensor=TRUE;;
+    [_physicsNode addChild: _currentTri];
+    CCLOG(@"INSIDE rec3");
     alreadyCollided=FALSE;
 }
 -(void) shapeSpawn{
     stopGrowth=FALSE;
-    //    [self schedule:@selector(growRect) interval:0.05];
     if(!playButtonOrNah){
-//        CCLOG(@"ON LINE152");
         shapeSize=0.001;
         pickShape=arc4random()%2;
         //    CGRect screenBounds = [[UIScreen mainScreen] bounds];
@@ -167,8 +150,8 @@ CGPoint touchLocation;
         //    int screenWidth=screenBounds.size.width;
         //    int shapelocx=arc4random()%screenHeight;//screenHeight/2;
         //    int shapelocy=arc4random()%screenWidth;//screenWidth/2;
-        rotationAmt=arc4random()%3;
-//        [self schedule:@selector(growRect) interval:0.05];
+        rotationAmt=arc4random()%2;
+        rotationDir=arc4random()%2;
         if (pickShape==1){
             _currentRect = (Rectangle*) [CCBReader load:@"rect"];
             _currentRect.position = touchLocation;
@@ -193,9 +176,9 @@ CGPoint touchLocation;
     
 }
 - (void)update:(CCTime)delta {
-    if (_physicsNode.parent) {
-        _physicsNode.position = ccp(_physicsNode.position.x, _physicsNode.position.y);
-    }
+//    if (_physicsNode.parent) {
+//        _physicsNode.position = ccp(_physicsNode.position.x, _physicsNode.position.y);
+//    }
     if(stopGrowth==FALSE && !playButtonOrNah &&!gameEnd){
         if(pickShape==1){
             [self updateRect];
@@ -220,10 +203,20 @@ CGPoint touchLocation;
     shapeSize+=0.002;
     _currentRect.scale=shapeSize;
     if (rotationAmt==1){
-        _currentRect.rotation+=1;
+        if (rotationDir==1){
+            _currentRect.rotation-=1;
+        }
+        else{
+            _currentRect.rotation+=1;
+        }
     }
     else{
-        _currentRect.rotation+=1.5;
+        if (rotationDir==1){
+            _currentRect.rotation-=1.5;
+        }
+        else{
+            _currentRect.rotation+=1.5;
+        }
     }
     _currentRect.mainscene= self;
     _currentRect.physicsBody.collisionType = @"Rectangle";
@@ -242,10 +235,20 @@ CGPoint touchLocation;
     shapeSize+=0.003;
     _currentTri.scale=shapeSize;
         if (rotationAmt==1){
-            _currentTri.rotation+=1;
+            if (rotationDir==1){
+                _currentTri.rotation-=1;
+            }
+            else{
+                _currentTri.rotation+=1;
+            }
         }
         else{
-            _currentTri.rotation+=1.5;
+            if (rotationDir==1){
+                _currentTri.rotation-=1.5;
+            }
+            else{
+                _currentTri.rotation+=1.5;
+            }
         }
     
     _currentTri.mainscene= self;
@@ -306,17 +309,5 @@ CGPoint touchLocation;
         CCLOG(@"shapespawned");
     }
 }
-//- (void)growRect{
-//    //Increase size during growth
-//        if(stopGrowth==FALSE){
-//            if(pickShape==1){
-//                [self updateRect];
-//            }
-//            else{
-//                [self updateTri];
-//            }
-//        }
-//
-//}
 
 @end
