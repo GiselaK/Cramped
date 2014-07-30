@@ -8,6 +8,7 @@
 
 #import "CCNode.h"
 #import "ShapeGrow.h"
+#import "startTri.h"
 
 @interface MainScene : CCNode <CCPhysicsCollisionDelegate> {
     NSTimer *TimeOfActiveUser;
@@ -16,6 +17,5 @@
 - (void)updateRect;
 - (void)updateTri;
 - (void)playClicked;
-//@selector[growRect];
 
 @end

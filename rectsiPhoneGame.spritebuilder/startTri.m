@@ -12,5 +12,14 @@ extern BOOL playButtonOrNah;
 @implementation startTri{
     
 }
-
+-(void)onEnter{
+    [super onEnter];
+    self.userInteractionEnabled=TRUE;
+}
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+    if(playButtonOrNah){
+        [self.mainscene playClicked];
+        CCLOG(@"OWW");
+    }
+}
 @end

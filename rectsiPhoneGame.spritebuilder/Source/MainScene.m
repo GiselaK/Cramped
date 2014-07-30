@@ -83,6 +83,7 @@ CGPoint touchLocation;
 }
 -(void) playButton{
     playButtonOrNah=TRUE;
+    _playTri.mainscene=self;
     _playTri.scale=0.2;
     _playTri.rotation=90;
     _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2);
@@ -283,22 +284,21 @@ CGPoint touchLocation;
 }
 -(void)gameOverScreen{
     _gameOver= (GameOver*) [CCBReader load:@"GameOver"];
-    _gameOver.position=ccp([[CCDirector sharedDirector] viewSize].width/1.1, [[CCDirector sharedDirector] viewSize].height/4);
+    _gameOver.rotation=270;
+    _gameOver.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/1.2);
     [self addChild:_gameOver];
     [self playButton];
 }
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     touchLocation = [touch locationInNode:self];
-    if(playButtonOrNah){
-        [self playClicked];
-    }else{
+    if(!playButtonOrNah){
         [self shapeSpawn];
     }
 }
 //-(void)updateBorder{
 //    CGSize screenBounds = [[CCDirector sharedDirector] viewSize];
 //    int screenHeight=screenBounds.height;
-//    int screenWidth=screenBounds.width;
+//    int screenWidth=screenBounds.width;5
 //    if (screenWidth>_playRect1.boundingBox.size.width){
 //        _playRect1.scale+=0.004;
 //        _playRect2.scale+=0.004;

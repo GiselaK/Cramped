@@ -145,8 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				80CB6DBE1966207600B466BE /* Rectangle.m */,
-				8087C53B1986CDB000CB94D9 /* startTri.h */,
 				8087C53C1986CDB000CB94D9 /* startTri.m */,
+				8087C53B1986CDB000CB94D9 /* startTri.h */,
 				80CB6DBD1966207600B466BE /* Rectangle.h */,
 				80220FDF196DCF82006CC5D3 /* ShapeGrow.h */,
 				80220FE0196DCF82006CC5D3 /* ShapeGrow.m */,
