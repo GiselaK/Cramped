@@ -67,7 +67,7 @@
 					<key>collisionMask</key>
 					<array/>
 					<key>collisionType</key>
-					<string>Triangle</string>
+					<string>Shape</string>
 					<key>cornerRadius</key>
 					<real>0.0</real>
 					<key>density</key>
@@ -192,8 +192,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -223,7 +221,7 @@
 					<key>collisionMask</key>
 					<array/>
 					<key>collisionType</key>
-					<string>Triangle</string>
+					<string>Shape</string>
 					<key>cornerRadius</key>
 					<real>0.0</real>
 					<key>density</key>
@@ -377,7 +375,7 @@
 					<key>collisionMask</key>
 					<array/>
 					<key>collisionType</key>
-					<string>Triangle</string>
+					<string>Shape</string>
 					<key>cornerRadius</key>
 					<real>0.0</real>
 					<key>density</key>
@@ -539,7 +537,7 @@
 					<key>collisionMask</key>
 					<array/>
 					<key>collisionType</key>
-					<string>Triangle</string>
+					<string>Shape</string>
 					<key>cornerRadius</key>
 					<real>0.0</real>
 					<key>density</key>
@@ -672,6 +670,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

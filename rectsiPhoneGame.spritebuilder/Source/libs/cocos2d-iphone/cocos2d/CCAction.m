@@ -1,4 +1,3 @@
-
 /*
  * cocos2d for iPhone: http://www.cocos2d-iphone.org
  *

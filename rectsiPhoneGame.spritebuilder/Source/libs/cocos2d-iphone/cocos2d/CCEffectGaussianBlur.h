@@ -8,17 +8,61 @@
 
 #import "CCEffect.h"
 
-#if CC_ENABLE_EXPERIMENTAL_EFFECTS
+
+/**
+ * CCEffectGaussianBlur performs blur operation on the pixels of the attached node.
+ */
+
 @interface CCEffectGaussianBlur : CCEffect
 
-@property (nonatomic) float blurStrength;
-@property (nonatomic) GLKVector2 blurDirection;
 
--(id)initWithbBurStrength:(float)blurStrength direction:(GLKVector2)direction;
-+(id)effectWithBlurStrength:(float)blurStrength direction:(GLKVector2)direction;
+/// -----------------------------------------------------------------------
+/// @name Accessing Effect Attributes
+/// -----------------------------------------------------------------------
+
+/** The size of the blur. This value is in the range [0..6].
+ */
+@property (nonatomic) NSUInteger blurRadius;
+
+
+/// -----------------------------------------------------------------------
+/// @name Initializing a CCEffectGaussianBlur object
+/// -----------------------------------------------------------------------
+
+/**
+ *  Initializes a CCEffectGaussianBlur object with the following default parameters:
+ *  blurRadius = 2
+ *
+ *  @return The CCEffectGaussianBlur object.
+ */
+-(id)init;
+
+/**
+ *  Initializes a CCEffectGaussianBlur object with the specified parameters.
+ *
+ *  @param blurRadius number of pixels blur will extend to (6 is the maximum, because we are limited by the number
+ *  of varying variables that can be passed to a glsl program).
+ *
+ *  @return The CCEffectGaussianBlur object.
+ */
+-(id)initWithPixelBlurRadius:(NSUInteger)blurRadius;
+
+
+/// -----------------------------------------------------------------------
+/// @name Creating a CCEffectGaussianBlur object
+/// -----------------------------------------------------------------------
+
+/**
+ *  Creates a CCEffectGaussianBlur object with the specified parameters.
+ *
+ *  @param blurRadius number of pixels blur will extend to (6 is the maximum, because we are limited by the number
+ *  of varying variables that can be passed to a glsl program).
+ *
+ *  @return The CCEffectGaussianBlur object.
+ */
++(id)effectWithPixelBlurRadius:(NSUInteger)blurRadius;
 
 @end
-#endif
 
 
 

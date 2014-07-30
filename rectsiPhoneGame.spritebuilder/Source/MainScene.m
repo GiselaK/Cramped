@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Apportable. All rights reserved.
 //
 #import "CCPhysics+ObjectiveChipmunk.h"
+#import "CCBReader.h"
 #import "MainScene.h"
 #import "shapeGrow.h"
 #import "Rectangle.h"
@@ -93,7 +94,9 @@ CGPoint touchLocation;
     //    _currentTri.physicsBody.collisionType = @"Triangle";
     //    _currentTri.physicsBody.sensor=FALSE;
 }
+
 -(void)playClicked{
+    [self removePhysics];
     [self removeSceen];
     [self addPhysics];
     gameEnd=FALSE;
@@ -163,7 +166,8 @@ CGPoint touchLocation;
     
 }
 -(void)decideShape{
-    pickShape=arc4random()%2;
+       pickShape=arc4random()%2;
+//        pickShape=2;
     if (pickShape==1){
         [self spawnRect];
     }
@@ -266,10 +270,10 @@ CGPoint touchLocation;
 }
 
 -(void)gameEnd{
-    [self removePhysics];
     gameStarted=FALSE;
     beginGameMode=TRUE;
     playButtonOrNah=TRUE;
+    pickShape=2;
     [self gameOverScreen];
     gameEndControl=TRUE;
 }
