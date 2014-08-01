@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>4</integer>
+	<integer>5</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -68,7 +68,7 @@
 				<key>displayName</key>
 				<string>CrampedLine</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_startTri1</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -152,6 +152,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -165,7 +167,7 @@
 				<key>displayName</key>
 				<string>CrampedLine</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_startTri2</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -262,7 +264,7 @@
 				<key>displayName</key>
 				<string>CrampedLine</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_startTri3</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -418,8 +420,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

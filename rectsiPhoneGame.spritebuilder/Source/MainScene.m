@@ -16,9 +16,15 @@
 #import "BorderLine.h"
 #import "startTri.h"
 
+extern int stackedShapes;
 BOOL playButtonOrNah;
 BOOL gameEndControl;
 BOOL gameEnd;
+int bonusPointsInt;
+int borderColor;
+int highScore;
+int totalShapes;
+int totalScoreVal;
 CGPoint touchLocation;
 @implementation MainScene
 {
@@ -30,17 +36,23 @@ CGPoint touchLocation;
     Rectangle *_currentRect;
     CCPhysicsNode *_physicsNode;
     GameOver *_gameOver;
+    NSNumber *perhighScore;
     startTri *_playTri;
     Triangle *_currentTri;
     BOOL alreadyCollided;
     BOOL beginGameMode;
     BOOL gameStarted;
-    BOOL stopGrowth;
+    BOOL large;
+    BOOL insane;
+    BOOL XL;
+    float bonusPoints;
     float shapeSize;
+    int currentShape;
     int pickShape;
     int rotationAmt;
     int rotationDir;
     int rotationVal;
+
 }
 - (void)didLoadFromCCB {
     [self setupPhysics];
@@ -50,7 +62,7 @@ CGPoint touchLocation;
     _physicsNode= [CCPhysicsNode node];
     _physicsNode.collisionDelegate = self;
     [self addChild:_physicsNode];
-    _physicsNode.debugDraw= TRUE;
+//    _physicsNode.debugDraw= TRUE;
 }
 -(void)loadCCBS{
     _currentTri = (Triangle*) [CCBReader load:@"tri"];
@@ -68,6 +80,8 @@ CGPoint touchLocation;
     [self startScreen];
 }
 -(void) startScreen{
+    NSNumber *currentHighScore = [[NSUserDefaults standardUserDefaults] objectForKey:@"perhighScore"];
+    highScore = [currentHighScore intValue];
     gameStarted=FALSE;
     beginGameMode=TRUE;
     [self playScreen];
@@ -79,6 +93,7 @@ CGPoint touchLocation;
     _beginGame= (BeginGame*) [CCBReader load:@"PlayScreen"];
     _beginGame.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/1.15);
     _beginGame.rotation=270;
+    _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2);
     [self addChild:_beginGame];
 }
 -(void) playButton{
@@ -86,7 +101,6 @@ CGPoint touchLocation;
     _playTri.mainscene=self;
     _playTri.scale=0.2;
     _playTri.rotation=90;
-    _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2);
     [self addChild: _playTri];
     //    _currentTri.physicsBody.collisionType = @"Triangle";
     //    _currentTri.physicsBody.sensor=FALSE;
@@ -100,21 +114,29 @@ CGPoint touchLocation;
     [self removePhysics];
     [self removeSceen];
     [self addPhysics];
+    stackedShapes=0;
+    bonusPoints=0;
+    totalShapes=0;
     gameEnd=FALSE;
+    large=FALSE;
+    insane=FALSE;
+    XL=FALSE;
     gameEndControl=FALSE;
     gameStarted=TRUE;
     playButtonOrNah=FALSE;
-    stopGrowth=FALSE;
     shapeSize=0.002;
     [self makeBorder];
+    currentShape=2;
     _currentTri.position = ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2);
     _currentTri.scale=shapeSize;
     _currentTri.mainscene= self;
     _currentTri.physicsBody.collisionType = @"Triangle";
-    _currentTri.physicsBody.sensor=TRUE;;
+    _currentTri.physicsBody.sensor=TRUE;
+    totalShapes+=1;
     [_physicsNode addChild: _currentTri];
-    _physicsNode.debugDraw= TRUE;
+//    _physicsNode.debugDraw= TRUE;
     alreadyCollided=FALSE;
+    [self decideShape];
 }
 -(void)removeSceen{
     [self removeChild:_playTri];
@@ -152,28 +174,37 @@ CGPoint touchLocation;
 }
 
 -(void) shapeSpawn{
+    totalShapes+=1;
+    large=FALSE;
+    XL=FALSE;
+    insane=FALSE;
     [self rotationDirection];
-    stopGrowth=FALSE;
-    if(!playButtonOrNah){
-        shapeSize=0.001;
-        rotationAmt=arc4random()%2;
-        [self decideShape];
-        //    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-        //    int screenHeight=screenBounds.size.height;
-        //    int screenWidth=screenBounds.size.width;
-        //    int shapelocx=arc4random()%screenHeight;//screenHeight/2;
-        //    int shapelocy=arc4random()%screenWidth;//screenWidth/2;
-    }
+    shapeSize=0.001;
+    rotationAmt=arc4random()%2;
+    [self spawnChosenShape];
     
 }
 -(void)decideShape{
-       pickShape=arc4random()%2;
-//        pickShape=2;
+    pickShape=arc4random()%2;
+    if(pickShape==1){
+        borderColor=1;
+    }
+    else if(pickShape==0){
+        borderColor=2;
+    }
+    CCLOG(@"decideshape:%d",pickShape);
+//    pickShape=2;
+}
+-(void)spawnChosenShape{
     if (pickShape==1){
+        CCLOG(@"shapeis:%d",pickShape);
         [self spawnRect];
+        currentShape=1;
     }
     else {
+        CCLOG(@"shapeis:%d",pickShape);
         [self spawnTri];
+        currentShape=2;
     }
 }
 -(void)rotationDirection{
@@ -205,8 +236,8 @@ CGPoint touchLocation;
     [_physicsNode addChild:_currentTri];
 }
 - (void)update:(CCTime)delta {
-    if(stopGrowth==FALSE && !playButtonOrNah &&!gameEnd){
-        if(pickShape==1){
+    if(!playButtonOrNah &&!gameEnd){
+        if(currentShape==1){
             [self updateRect];
         }
         else{
@@ -227,6 +258,24 @@ CGPoint touchLocation;
         [_physicsNode removeChild:_currentRect cleanup:YES];
     }
     shapeSize+=0.002;
+    if (large==false){
+        if (_currentRect.boundingBox.size.width>60 && _currentRect.boundingBox.size.width<=120){
+            bonusPoints+=5;
+            large=TRUE;
+        }
+    }
+    if(XL==false){
+        if (_currentRect.boundingBox.size.width>120 && _currentRect.boundingBox.size.width<180){
+            bonusPoints+=5;
+            XL=TRUE;
+        }
+    }
+    if (insane==FALSE){
+        if (_currentRect.boundingBox.size.width>180){
+            bonusPoints+=5;
+            insane=TRUE;
+        }
+    }
     _currentRect.scale=shapeSize;
     [self CalcRotation];
     _currentRect.rotation=rotationVal;
@@ -243,6 +292,24 @@ CGPoint touchLocation;
         [_physicsNode removeChild:_currentTri];
     }
     shapeSize+=0.003;
+    if (large==false){
+        if (_currentTri.boundingBox.size.width>60 && _currentTri.boundingBox.size.width<=120){
+            bonusPoints+=5;
+            large=TRUE;
+        }
+    }
+    if(XL==false){
+        if (_currentTri.boundingBox.size.width>120 && _currentTri.boundingBox.size.width<180){
+            bonusPoints+=5;
+            XL=TRUE;
+        }
+    }
+    if (insane==FALSE){
+        if (_currentTri.boundingBox.size.width>180){
+            bonusPoints+=5;
+            insane=TRUE;
+        }
+    }
     _currentTri.scale=shapeSize;
     [self CalcRotation];
     _currentTri.rotation=rotationVal;
@@ -274,7 +341,7 @@ CGPoint touchLocation;
     gameStarted=FALSE;
     beginGameMode=TRUE;
     playButtonOrNah=TRUE;
-    pickShape=2;
+//    pickShape=2;
     [self gameOverScreen];
     gameEndControl=TRUE;
 }
@@ -283,18 +350,27 @@ CGPoint touchLocation;
     [self removeChild:_physicsNode];
 }
 -(void)gameOverScreen{
+    bonusPointsInt = (int) bonusPoints;
+    totalScoreVal=bonusPointsInt+totalShapes+stackedShapes;
+    if(highScore<totalScoreVal){
+        highScore=totalScoreVal;
+        perhighScore = [NSNumber numberWithInteger:highScore];
+        [[NSUserDefaults standardUserDefaults] setObject:perhighScore forKey:@"perhighScore"];
+    }
     _gameOver= (GameOver*) [CCBReader load:@"GameOver"];
-    _gameOver.rotation=270;
-    _gameOver.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/1.2);
+    _gameOver.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.5);
     [self addChild:_gameOver];
+    _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/1.15, [[CCDirector sharedDirector] viewSize].height/3.5);
     [self playButton];
 }
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     touchLocation = [touch locationInNode:self];
     if(!playButtonOrNah){
         [self shapeSpawn];
+        [self decideShape];
     }
 }
+
 //-(void)updateBorder{
 //    CGSize screenBounds = [[CCDirector sharedDirector] viewSize];
 //    int screenHeight=screenBounds.height;

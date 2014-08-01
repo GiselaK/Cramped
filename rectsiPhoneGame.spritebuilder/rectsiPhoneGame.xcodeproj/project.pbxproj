@@ -181,8 +181,8 @@
 				80A020EB19816FFA006E4626 /* BorderLine.m */,
 				8074A99F1977444B00835ED3 /* GameOver.h */,
 				8077C3E0197DAC0500DFF999 /* BeginGame.h */,
-				8077C3E1197DAC0500DFF999 /* BeginGame.m */,
 				8074A9A01977444B00835ED3 /* GameOver.m */,
+				8077C3E1197DAC0500DFF999 /* BeginGame.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
