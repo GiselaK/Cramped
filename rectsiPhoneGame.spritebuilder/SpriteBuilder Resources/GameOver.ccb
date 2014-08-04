@@ -137,8 +137,6 @@
 						<real>0.5</real>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1000,7 +998,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>102</real>
+							<real>117</real>
 							<real>196</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1038,7 +1036,7 @@
 						<string>Text</string>
 						<key>value</key>
 						<array>
-							<string>Bonus Points:</string>
+							<string>Size Bonus:</string>
 							<false/>
 						</array>
 					</dict>
@@ -1415,7 +1413,7 @@
 						<key>value</key>
 						<array>
 							<real>186</real>
-							<real>138</real>
+							<real>139</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1462,7 +1460,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Helvetica</string>
+						<string>Georgia-Italic</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1588,6 +1586,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -2449,8 +2449,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>150</real>
-							<real>305</real>
+							<real>149</real>
+							<real>304</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
