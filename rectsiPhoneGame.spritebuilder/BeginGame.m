@@ -10,5 +10,11 @@
 
 
 @implementation BeginGame
-
+-(void)moreGames{
+    [MGWU displayCrossPromo];
+}
+-(void)challenge{
+    
+//    [MGWU getRandomPlayerWithCallback:@selector(gotRandomPlayer:) onTarget:self];
+}
 @end

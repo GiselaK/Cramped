@@ -80,7 +80,7 @@ CGPoint touchLocation;
     [self startScreen];
 }
 -(void) startScreen{
-    NSNumber *currentHighScore = [[NSUserDefaults standardUserDefaults] objectForKey:@"perhighScore"];
+    NSNumber *currentHighScore = [MGWU objectForKey:@"perhighScore"];
     highScore = [currentHighScore intValue];
     gameStarted=FALSE;
     beginGameMode=TRUE;
@@ -92,7 +92,6 @@ CGPoint touchLocation;
 -(void)playScreen{
     _beginGame= (BeginGame*) [CCBReader load:@"PlayScreen"];
     _beginGame.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/1.15);
-    _beginGame.rotation=270;
     _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2);
     [self addChild:_beginGame];
 }
@@ -355,7 +354,7 @@ CGPoint touchLocation;
     if(highScore<totalScoreVal){
         highScore=totalScoreVal;
         perhighScore = [NSNumber numberWithInteger:highScore];
-        [[NSUserDefaults standardUserDefaults] setObject:perhighScore forKey:@"perhighScore"];
+        [MGWU setObject:perhighScore forKey:@"perhighScore"];
     }
     _gameOver= (GameOver*) [CCBReader load:@"GameOver"];
     _gameOver.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.5);
