@@ -15,6 +15,5 @@
 }
 -(void)challenge{
     
-//    [MGWU getRandomPlayerWithCallback:@selector(gotRandomPlayer:) onTarget:self];
 }
 @end
