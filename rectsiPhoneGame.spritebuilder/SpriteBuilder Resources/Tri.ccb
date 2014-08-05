@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>22</integer>
+	<integer>24</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -68,7 +68,7 @@
 				<key>displayName</key>
 				<string>CrampedLine</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_triLine1</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>physicsBody</key>
@@ -230,7 +230,7 @@
 				<key>displayName</key>
 				<string>CrampedLine</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_triLine2</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>physicsBody</key>
@@ -315,8 +315,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>200</real>
-							<real>0.0</real>
+							<real>199.80619812011719</real>
+							<real>-3.6068868212169036e-06</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -392,7 +392,7 @@
 				<key>displayName</key>
 				<string>CrampedLine</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_triLine3</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>physicsBody</key>
@@ -595,8 +595,8 @@
 				<string>Point</string>
 				<key>value</key>
 				<array>
-					<real>0.5</real>
-					<real>0.5</real>
+					<real>0.49000000953674316</real>
+					<real>0.40000000596046448</real>
 				</array>
 			</dict>
 			<dict>

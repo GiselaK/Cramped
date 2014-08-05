@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>3</integer>
+	<integer>4</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -51,7 +51,7 @@
 				<key>displayName</key>
 				<string>CrampedLine</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_borderLine</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>physicsBody</key>
@@ -81,48 +81,40 @@
 					<key>points</key>
 					<array>
 						<array>
-							<real>-0.05507780984044075</real>
-							<real>322.53671264648438</real>
+							<real>-0.24389788508415222</real>
+							<real>320.290771484375</real>
 						</array>
 						<array>
-							<real>-0.099457003176212311</real>
-							<real>376.0882568359375</real>
+							<real>0.046319965273141861</real>
+							<real>378.76882934570312</real>
 						</array>
 						<array>
-							<real>243.47407531738281</real>
-							<real>322.19711303710938</real>
+							<real>359.97808837890625</real>
+							<real>379.08209228515625</real>
 						</array>
 						<array>
-							<real>359.87991333007812</real>
-							<real>376.2232666015625</real>
-						</array>
-						<array>
-							<real>359.81243896484375</real>
-							<real>322.07803344726562</real>
+							<real>359.97265625</real>
+							<real>319.23809814453125</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>-0.099457003176212311</real>
-								<real>376.0882568359375</real>
+								<real>359.97265625</real>
+								<real>319.23809814453125</real>
 							</array>
 							<array>
-								<real>-0.05507780984044075</real>
-								<real>322.53671264648438</real>
+								<real>359.97808837890625</real>
+								<real>379.08209228515625</real>
 							</array>
 							<array>
-								<real>243.47407531738281</real>
-								<real>322.19711303710938</real>
+								<real>0.046319965273141861</real>
+								<real>378.76882934570312</real>
 							</array>
 							<array>
-								<real>359.81243896484375</real>
-								<real>322.07803344726562</real>
-							</array>
-							<array>
-								<real>359.87991333007812</real>
-								<real>376.2232666015625</real>
+								<real>-0.24389788508415222</real>
+								<real>320.290771484375</real>
 							</array>
 						</array>
 					</array>
@@ -144,7 +136,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>-0.12499946355819702</real>
 							<real>200</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -169,8 +161,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1.1112611293792725</real>
-							<real>0.20042207837104797</real>
+							<real>1.1116571426391602</real>
+							<real>0.17633050680160522</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -181,7 +173,7 @@
 						<key>type</key>
 						<string>Degrees</string>
 						<key>value</key>
-						<real>89.5</real>
+						<real>89.923622131347656</real>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -208,10 +200,12 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string></string>
+		<string>BorderLine</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>

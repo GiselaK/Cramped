@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 @class MainScene;
+
 @interface startTri : CCNode {
      NSTimer *TimeOfActiveUser;
 }

@@ -51,7 +51,7 @@
 				<key>displayName</key>
 				<string>CrampedLine</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_rectLine1</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>physicsBody</key>
@@ -67,7 +67,7 @@
 					<key>collisionMask</key>
 					<array/>
 					<key>collisionType</key>
-					<string>Triangle</string>
+					<string>Shape</string>
 					<key>cornerRadius</key>
 					<real>0.0</real>
 					<key>density</key>
@@ -81,40 +81,40 @@
 					<key>points</key>
 					<array>
 						<array>
-							<real>0.58540987968444824</real>
-							<real>322.91928100585938</real>
+							<real>0.049345124512910843</real>
+							<real>322.951416015625</real>
 						</array>
 						<array>
-							<real>0.2101675420999527</real>
-							<real>378.22250366210938</real>
+							<real>0.13722388446331024</real>
+							<real>376.6905517578125</real>
 						</array>
 						<array>
-							<real>359.97042846679688</real>
-							<real>376.91668701171875</real>
+							<real>360.07763671875</real>
+							<real>377.42630004882812</real>
 						</array>
 						<array>
-							<real>360.10092163085938</real>
-							<real>321.25045776367188</real>
+							<real>359.9544677734375</real>
+							<real>320.96975708007812</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>360.10092163085938</real>
-								<real>321.25045776367188</real>
+								<real>359.9544677734375</real>
+								<real>320.96975708007812</real>
 							</array>
 							<array>
-								<real>359.97042846679688</real>
-								<real>376.91668701171875</real>
+								<real>360.07763671875</real>
+								<real>377.42630004882812</real>
 							</array>
 							<array>
-								<real>0.2101675420999527</real>
-								<real>378.22250366210938</real>
+								<real>0.13722388446331024</real>
+								<real>376.6905517578125</real>
 							</array>
 							<array>
-								<real>0.58540987968444824</real>
-								<real>322.91928100585938</real>
+								<real>0.049345124512910843</real>
+								<real>322.951416015625</real>
 							</array>
 						</array>
 					</array>
@@ -192,8 +192,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -207,7 +205,7 @@
 				<key>displayName</key>
 				<string>CrampedLine</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_rectLine2</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>physicsBody</key>
@@ -223,7 +221,7 @@
 					<key>collisionMask</key>
 					<array/>
 					<key>collisionType</key>
-					<string>Triangle</string>
+					<string>Shape</string>
 					<key>cornerRadius</key>
 					<real>0.0</real>
 					<key>density</key>
@@ -237,40 +235,40 @@
 					<key>points</key>
 					<array>
 						<array>
-							<real>0.51050502061843872</real>
-							<real>323.0240478515625</real>
+							<real>-0.027109395712614059</real>
+							<real>322.19076538085938</real>
 						</array>
 						<array>
-							<real>0.291075199842453</real>
-							<real>373.52978515625</real>
+							<real>0.1978602260351181</real>
+							<real>375.71307373046875</real>
 						</array>
 						<array>
-							<real>370.22991943359375</real>
-							<real>371.02212524414062</real>
+							<real>359.97085571289062</real>
+							<real>376.22955322265625</real>
 						</array>
 						<array>
-							<real>370.05532836914062</real>
-							<real>319.93399047851562</real>
+							<real>359.83465576171875</real>
+							<real>320.52679443359375</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>370.05532836914062</real>
-								<real>319.93399047851562</real>
+								<real>359.83465576171875</real>
+								<real>320.52679443359375</real>
 							</array>
 							<array>
-								<real>370.22991943359375</real>
-								<real>371.02212524414062</real>
+								<real>359.97085571289062</real>
+								<real>376.22955322265625</real>
 							</array>
 							<array>
-								<real>0.291075199842453</real>
-								<real>373.52978515625</real>
+								<real>0.1978602260351181</real>
+								<real>375.71307373046875</real>
 							</array>
 							<array>
-								<real>0.51050502061843872</real>
-								<real>323.0240478515625</real>
+								<real>-0.027109395712614059</real>
+								<real>322.19076538085938</real>
 							</array>
 						</array>
 					</array>
@@ -348,6 +346,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -361,7 +361,7 @@
 				<key>displayName</key>
 				<string>CrampedLine</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_rectLine3</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>physicsBody</key>
@@ -377,7 +377,7 @@
 					<key>collisionMask</key>
 					<array/>
 					<key>collisionType</key>
-					<string>Triangle</string>
+					<string>Shape</string>
 					<key>cornerRadius</key>
 					<real>0.0</real>
 					<key>density</key>
@@ -391,40 +391,40 @@
 					<key>points</key>
 					<array>
 						<array>
-							<real>-0.05507780984044075</real>
-							<real>322.53671264648438</real>
+							<real>0.050661634653806686</real>
+							<real>320.88973999023438</real>
 						</array>
 						<array>
-							<real>-0.099457003176212311</real>
-							<real>376.0882568359375</real>
+							<real>0.24135810136795044</real>
+							<real>377.61087036132812</real>
 						</array>
 						<array>
-							<real>359.73651123046875</real>
-							<real>377.55145263671875</real>
+							<real>359.9603271484375</real>
+							<real>375.51577758789062</real>
 						</array>
 						<array>
-							<real>359.81243896484375</real>
-							<real>322.07803344726562</real>
+							<real>359.81356811523438</real>
+							<real>320.09320068359375</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>359.81243896484375</real>
-								<real>322.07803344726562</real>
+								<real>359.81356811523438</real>
+								<real>320.09320068359375</real>
 							</array>
 							<array>
-								<real>359.73651123046875</real>
-								<real>377.55145263671875</real>
+								<real>359.9603271484375</real>
+								<real>375.51577758789062</real>
 							</array>
 							<array>
-								<real>-0.099457003176212311</real>
-								<real>376.0882568359375</real>
+								<real>0.24135810136795044</real>
+								<real>377.61087036132812</real>
 							</array>
 							<array>
-								<real>-0.05507780984044075</real>
-								<real>322.53671264648438</real>
+								<real>0.050661634653806686</real>
+								<real>320.88973999023438</real>
 							</array>
 						</array>
 					</array>
@@ -523,7 +523,7 @@
 				<key>displayName</key>
 				<string>CrampedLine</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_rectLine4</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>physicsBody</key>
@@ -539,7 +539,7 @@
 					<key>collisionMask</key>
 					<array/>
 					<key>collisionType</key>
-					<string>Triangle</string>
+					<string>Shape</string>
 					<key>cornerRadius</key>
 					<real>0.0</real>
 					<key>density</key>
@@ -553,40 +553,40 @@
 					<key>points</key>
 					<array>
 						<array>
-							<real>0.092915520071983337</real>
-							<real>321.85693359375</real>
+							<real>0.30059430003166199</real>
+							<real>322.18338012695312</real>
 						</array>
 						<array>
-							<real>-0.02440306730568409</real>
-							<real>378.11514282226562</real>
+							<real>0.031686574220657349</real>
+							<real>378.74371337890625</real>
 						</array>
 						<array>
-							<real>349.71725463867188</real>
-							<real>376.77041625976562</real>
+							<real>359.8486328125</real>
+							<real>376.27340698242188</real>
 						</array>
 						<array>
-							<real>349.80862426757812</real>
-							<real>321.36245727539062</real>
+							<real>359.81918334960938</real>
+							<real>322.5343017578125</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>349.80862426757812</real>
-								<real>321.36245727539062</real>
+								<real>359.81918334960938</real>
+								<real>322.5343017578125</real>
 							</array>
 							<array>
-								<real>349.71725463867188</real>
-								<real>376.77041625976562</real>
+								<real>359.8486328125</real>
+								<real>376.27340698242188</real>
 							</array>
 							<array>
-								<real>-0.02440306730568409</real>
-								<real>378.11514282226562</real>
+								<real>0.031686574220657349</real>
+								<real>378.74371337890625</real>
 							</array>
 							<array>
-								<real>0.092915520071983337</real>
-								<real>321.85693359375</real>
+								<real>0.30059430003166199</real>
+								<real>322.18338012695312</real>
 							</array>
 						</array>
 					</array>

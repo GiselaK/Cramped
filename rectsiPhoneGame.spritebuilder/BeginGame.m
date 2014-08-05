@@ -10,5 +10,10 @@
 
 
 @implementation BeginGame
-
+-(void)moreGames{
+    [MGWU displayCrossPromo];
+}
+-(void)challenge{
+    
+}
 @end

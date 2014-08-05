@@ -11,6 +11,7 @@
 extern BOOL playButtonOrNah;
 extern BOOL gameEnd;
 extern CGPoint touchLocation;
+int stackedShapes;
 @implementation ShapeGrow{
     BOOL gameStarted;
 }
@@ -23,6 +24,7 @@ extern CGPoint touchLocation;
     touchLocation = [touch locationInNode:self.mainscene];
     if (!playButtonOrNah && !gameEnd){
         [self.mainscene shapeSpawn];
+        stackedShapes+=10;
     }
 
 }
