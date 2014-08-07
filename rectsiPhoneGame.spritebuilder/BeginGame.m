@@ -8,12 +8,10 @@
 
 #import "BeginGame.h"
 
-
 @implementation BeginGame
--(void)moreGames{
-    [MGWU displayCrossPromo];
-}
--(void)challenge{
-    
-}
+//
+//-(void)challenge{
+//    [MGWU forceFacebook];
+//    [MGWU getMyInfoWithCallback:@selector(loadUserInfo:) onTarget:self];
+//}
 @end

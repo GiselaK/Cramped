@@ -24,9 +24,11 @@ int stackedShapes;
     touchLocation = [touch locationInNode:self.mainscene];
     if (!playButtonOrNah && !gameEnd){
         [self.mainscene shapeSpawn];
-        stackedShapes+=10;
+        stackedShapes+=1;
     }
-
+    else{
+        stackedShapes=0;
+    }
 }
 
 

@@ -29,14 +29,9 @@
 #import "CCBuilderReader.h"
 
 @implementation AppController
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    // attempt to extract a token from the url
-    return [MGWU handleURL:url];
-}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [MGWU loadMGWU:@"gigicramped89"];
-    [MGWU dark];
     // Configure Cocos2d with the options set in SpriteBuilder
     NSString* configPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Published-iOS"]; // TODO: add support for Published-Android support
     configPath = [configPath stringByAppendingPathComponent:@"configCocos2d.plist"];
@@ -58,8 +53,14 @@
     //[cocos2dSetup setObject:kEAGLColorFormatRGB565 forKey:CCConfigPixelFormat];
     
     [self setupCocos2dWithOptions:cocos2dSetup];
-    
+    [MGWU loadMGWU:@"gigicramped89"];
+    [MGWU dark];
+    [MGWU setReminderMessage:@"A friend just challenged you in Cramped!"];
     return YES;
+}
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    // attempt to extract a token from the url
+    return [MGWU handleURL:url];
 }
 
 - (CCScene*) startScene
