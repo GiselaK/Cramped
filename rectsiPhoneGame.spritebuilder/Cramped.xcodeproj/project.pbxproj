@@ -10,6 +10,8 @@
 		801D5ABC19915D1900116FE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 801D5ABB19915D1900116FE5 /* AppDelegate.m */; };
 		80220FE1196DCF82006CC5D3 /* ShapeGrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 80220FE0196DCF82006CC5D3 /* ShapeGrow.m */; };
 		806E0ED41992FFA60005FD5B /* tap.m in Sources */ = {isa = PBXBuildFile; fileRef = 806E0ED31992FFA60005FD5B /* tap.m */; };
+		806E0EDA1993E3560005FD5B /* Taphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 806E0ED91993E3560005FD5B /* Taphere.m */; };
+		806E0EDE1993E3640005FD5B /* Orhere.m in Sources */ = {isa = PBXBuildFile; fileRef = 806E0EDD1993E3640005FD5B /* Orhere.m */; };
 		8074A9A11977444B00835ED3 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8074A9A01977444B00835ED3 /* GameOver.m */; };
 		8077C3E2197DAC0500DFF999 /* BeginGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8077C3E1197DAC0500DFF999 /* BeginGame.m */; };
 		8087C53D1986CDB000CB94D9 /* startTri.m in Sources */ = {isa = PBXBuildFile; fileRef = 8087C53C1986CDB000CB94D9 /* startTri.m */; };
@@ -148,6 +150,10 @@
 		80220FE0196DCF82006CC5D3 /* ShapeGrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeGrow.m; sourceTree = "<group>"; };
 		806E0ED21992FFA60005FD5B /* tap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tap.h; sourceTree = "<group>"; };
 		806E0ED31992FFA60005FD5B /* tap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tap.m; sourceTree = "<group>"; };
+		806E0ED81993E3560005FD5B /* Taphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Taphere.h; sourceTree = "<group>"; };
+		806E0ED91993E3560005FD5B /* Taphere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Taphere.m; sourceTree = "<group>"; };
+		806E0EDC1993E3640005FD5B /* Orhere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Orhere.h; sourceTree = "<group>"; };
+		806E0EDD1993E3640005FD5B /* Orhere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Orhere.m; sourceTree = "<group>"; };
 		8074A99F1977444B00835ED3 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
 		8074A9A01977444B00835ED3 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
 		8077C3E0197DAC0500DFF999 /* BeginGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeginGame.h; sourceTree = "<group>"; };
@@ -315,6 +321,10 @@
 				80CB6DBD1966207600B466BE /* Rectangle.h */,
 				80220FDF196DCF82006CC5D3 /* ShapeGrow.h */,
 				80220FE0196DCF82006CC5D3 /* ShapeGrow.m */,
+				806E0ED81993E3560005FD5B /* Taphere.h */,
+				806E0ED91993E3560005FD5B /* Taphere.m */,
+				806E0EDC1993E3640005FD5B /* Orhere.h */,
+				806E0EDD1993E3640005FD5B /* Orhere.m */,
 				80AFFA4D196C4ED700B02012 /* Triangle.h */,
 				80AFFA4E196C4ED700B02012 /* Triangle.m */,
 				80AFFA51196C529100B02012 /* Pentagon.h */,
@@ -725,6 +735,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806E0EDA1993E3560005FD5B /* Taphere.m in Sources */,
 				80AFFA4F196C4ED700B02012 /* Triangle.m in Sources */,
 				80A020EC19816FFA006E4626 /* BorderLine.m in Sources */,
 				8074A9A11977444B00835ED3 /* GameOver.m in Sources */,
@@ -732,6 +743,7 @@
 				80AFFA53196C529100B02012 /* Pentagon.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				80220FE1196DCF82006CC5D3 /* ShapeGrow.m in Sources */,
+				806E0EDE1993E3640005FD5B /* Orhere.m in Sources */,
 				809A2C841991C930007B0184 /* tutorial1.m in Sources */,
 				801D5ABC19915D1900116FE5 /* AppDelegate.m in Sources */,
 				80CB6DBF1966207600B466BE /* Rectangle.m in Sources */,

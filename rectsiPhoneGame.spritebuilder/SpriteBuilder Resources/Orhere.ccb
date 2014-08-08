@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -41,12 +41,12 @@
 		<array>
 			<dict>
 				<key>UUID</key>
-				<integer>3</integer>
+				<integer>1</integer>
 				<key>animatedProperties</key>
 				<dict>
 					<key>0</key>
 					<dict>
-						<key>rotation</key>
+						<key>opacity</key>
 						<dict>
 							<key>keyframes</key>
 							<array>
@@ -57,19 +57,19 @@
 										<integer>1</integer>
 									</dict>
 									<key>name</key>
-									<string>rotation</string>
+									<string>opacity</string>
 									<key>time</key>
-									<real>0.0</real>
+									<real>3</real>
 									<key>type</key>
-									<integer>2</integer>
+									<integer>10</integer>
 									<key>value</key>
-									<real>0.0</real>
+									<real>1</real>
 								</dict>
 							</array>
 							<key>name</key>
-							<string>rotation</string>
+							<string>opacity</string>
 							<key>type</key>
-							<integer>2</integer>
+							<integer>10</integer>
 						</dict>
 					</dict>
 				</dict>
@@ -82,7 +82,7 @@
 				<key>displayName</key>
 				<string>CCLabelTTF</string>
 				<key>memberVarAssignmentName</key>
-				<string>_tap</string>
+				<string>_Orhere</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -102,8 +102,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>236</real>
-							<real>216</real>
+							<real>-39.999969482421875</real>
+							<real>29.000030517578125</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -134,23 +134,13 @@
 						</array>
 					</dict>
 					<dict>
-						<key>baseValue</key>
-						<real>0.0</real>
-						<key>name</key>
-						<string>rotation</string>
-						<key>type</key>
-						<string>Degrees</string>
-						<key>value</key>
-						<real>0.0</real>
-					</dict>
-					<dict>
 						<key>name</key>
 						<string>string</string>
 						<key>type</key>
 						<string>Text</string>
 						<key>value</key>
 						<array>
-							<string>Tap Anywhere!</string>
+							<string>Or Here!</string>
 							<false/>
 						</array>
 					</dict>
@@ -169,7 +159,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>30</real>
+							<real>25</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -180,6 +170,16 @@
 						<string>Check</string>
 						<key>value</key>
 						<false/>
+					</dict>
+					<dict>
+						<key>baseValue</key>
+						<real>1</real>
+						<key>name</key>
+						<string>opacity</string>
+						<key>type</key>
+						<string>Float</string>
+						<key>value</key>
+						<real>1</real>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -293,7 +293,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>tap</string>
+		<string>Orhere</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
@@ -331,8 +331,8 @@
 				<string>Size</string>
 				<key>value</key>
 				<array>
-					<real>10</real>
-					<real>10</real>
+					<real>0.0</real>
+					<real>0.0</real>
 					<integer>0</integer>
 					<integer>0</integer>
 				</array>
@@ -411,7 +411,7 @@
 			<key>chainedSequenceId</key>
 			<integer>-1</integer>
 			<key>length</key>
-			<real>10</real>
+			<real>3</real>
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>

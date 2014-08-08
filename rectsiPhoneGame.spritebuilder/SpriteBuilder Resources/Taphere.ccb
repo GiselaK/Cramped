@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -41,12 +41,12 @@
 		<array>
 			<dict>
 				<key>UUID</key>
-				<integer>3</integer>
+				<integer>1</integer>
 				<key>animatedProperties</key>
 				<dict>
 					<key>0</key>
 					<dict>
-						<key>rotation</key>
+						<key>scale</key>
 						<dict>
 							<key>keyframes</key>
 							<array>
@@ -57,19 +57,40 @@
 										<integer>1</integer>
 									</dict>
 									<key>name</key>
-									<string>rotation</string>
+									<string>scale</string>
 									<key>time</key>
 									<real>0.0</real>
 									<key>type</key>
-									<integer>2</integer>
+									<integer>4</integer>
 									<key>value</key>
-									<real>0.0</real>
+									<array>
+										<real>0.0</real>
+										<real>0.0</real>
+									</array>
+								</dict>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>type</key>
+										<integer>1</integer>
+									</dict>
+									<key>name</key>
+									<string>scale</string>
+									<key>time</key>
+									<real>3</real>
+									<key>type</key>
+									<integer>4</integer>
+									<key>value</key>
+									<array>
+										<real>1</real>
+										<real>1</real>
+									</array>
 								</dict>
 							</array>
 							<key>name</key>
-							<string>rotation</string>
+							<string>scale</string>
 							<key>type</key>
-							<integer>2</integer>
+							<integer>4</integer>
 						</dict>
 					</dict>
 				</dict>
@@ -82,7 +103,7 @@
 				<key>displayName</key>
 				<string>CCLabelTTF</string>
 				<key>memberVarAssignmentName</key>
-				<string>_tap</string>
+				<string>_Taphere</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -102,8 +123,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>236</real>
-							<real>216</real>
+							<real>0.0</real>
+							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -121,27 +142,22 @@
 						</array>
 					</dict>
 					<dict>
+						<key>baseValue</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+						</array>
 						<key>name</key>
 						<string>scale</string>
 						<key>type</key>
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.66666668653488159</real>
+							<real>0.66666668653488159</real>
 							<false/>
 							<integer>0</integer>
 						</array>
-					</dict>
-					<dict>
-						<key>baseValue</key>
-						<real>0.0</real>
-						<key>name</key>
-						<string>rotation</string>
-						<key>type</key>
-						<string>Degrees</string>
-						<key>value</key>
-						<real>0.0</real>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -150,7 +166,7 @@
 						<string>Text</string>
 						<key>value</key>
 						<array>
-							<string>Tap Anywhere!</string>
+							<string>Tap In Here!</string>
 							<false/>
 						</array>
 					</dict>
@@ -293,7 +309,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>tap</string>
+		<string>Taphere</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
@@ -411,13 +427,13 @@
 			<key>chainedSequenceId</key>
 			<integer>-1</integer>
 			<key>length</key>
-			<real>10</real>
+			<real>3</real>
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>2</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

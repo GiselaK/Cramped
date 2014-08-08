@@ -17,5 +17,5 @@
 - (void)updateRect;
 - (void)updateTri;
 - (void)playClicked;
-
+- (void)updateScore;
 @end

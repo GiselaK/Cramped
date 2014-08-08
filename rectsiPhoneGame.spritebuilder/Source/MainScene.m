@@ -17,8 +17,10 @@
 #import "startTri.h"
 #import "GameOverLoose.h"
 #import "tap.h"
-
+#import "Taphere.h"
+#import "Orhere.h"
 extern int stackedShapes;
+extern BOOL tappedInside;
 BOOL playButtonOrNah;
 BOOL gameEnd;
 int bonusPointsInt;
@@ -37,7 +39,13 @@ CGPoint touchLocation;
     BorderLine *_playRect3;
     BorderLine *_playRect4;
     Rectangle *_currentRect;
+    Taphere *_Taphere;
+    Orhere *_Orhere;
     CCLabelTTF *_scoreatm;
+    CGPoint border1pos;
+    CGPoint border2pos;
+    CGPoint border3pos;
+    CGPoint border4pos;
     CCPhysicsNode *_physicsNode;
     GameOver *_gameOver;
     GameOverLoose *_gameOverLoose;
@@ -47,18 +55,26 @@ CGPoint touchLocation;
     Triangle *_currentTri;
     BOOL alreadyCollided;
     BOOL beginGameMode;
+    BOOL doneTutorial;
+    BOOL firstShape;
     BOOL gameStarted;
     BOOL tutorialComplete;
     BOOL large;
     BOOL insane;
     BOOL XL;
+    BOOL tutorial;
+    BOOL OrHere;
+    int orHereDoneTwice;
+    BOOL tappedOutside;
     float bonusPoints;
     float shapeSize;
     int currentShape;
     int pickShape;
+    int numb;
     int rotationAmt;
     int rotationDir;
     int rotationVal;
+    int num;
 
 }
 - (void)didLoadFromCCB {
@@ -83,8 +99,15 @@ CGPoint touchLocation;
     [self startScreen];
 }
 -(void) startScreen{
+    if(num!=1){
+        tutorial=true;
+        orHereDoneTwice=0;
+    }
+    num=1;
     NSNumber *currentHighScore = [MGWU objectForKey:@"perhighScore"];
     highScore = [currentHighScore intValue];
+    perhighScore=0;
+    highScore=0;
     [self playScreen];
     //Loads PlayScreen
     [self playButton];
@@ -125,11 +148,14 @@ CGPoint touchLocation;
     [self makeBorder];
     alreadyCollided=FALSE;
     gameStarted=TRUE;
-     [self tutorial1];
+    if (tutorial==true) {
+        firstShape=TRUE;
+    }
     [self decideShape];
+    [self tapAnywhere];
 }
--(void)tutorial1{
-    _tap = (tap*) [CCBReader load:@"tap"];
+-(void)tapAnywhere{
+    _tap = (tap*) [CCBReader load:@"Tap"];
     [self addChild:_tap];
 }
 -(void)removeSceen{
@@ -160,10 +186,14 @@ CGPoint touchLocation;
     _playRect4.scale=borderWScale;
     _playRect3.rotation=90;
     _playRect4.rotation=90;
-    _playRect1.position = ccp([[CCDirector sharedDirector] viewSize].width, [[CCDirector sharedDirector] viewSize].height/2);
-    _playRect2.position = ccp(1, [[CCDirector sharedDirector] viewSize].height/2);
-    _playRect3.position = ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector]viewSize].height);
-    _playRect4.position = ccp([[CCDirector sharedDirector] viewSize].width/2,1);
+    border1pos=ccp([[CCDirector sharedDirector] viewSize].width, [[CCDirector sharedDirector] viewSize].height/2);
+    border2pos=ccp(1, [[CCDirector sharedDirector] viewSize].height/2);
+    border3pos=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector]viewSize].height);
+    border4pos=ccp([[CCDirector sharedDirector] viewSize].width/2,1);
+    _playRect1.position= border1pos;
+    _playRect2.position= border2pos;
+    _playRect3.position= border3pos;
+    _playRect4.position= border4pos;
     [_physicsNode addChild: _playRect1];
     [_physicsNode addChild: _playRect2];
     [_physicsNode addChild: _playRect3];
@@ -189,17 +219,17 @@ CGPoint touchLocation;
     else if(pickShape==0){
         borderColor=2;
     }
-    CCLOG(@"decideshape:%d",pickShape);
-//    pickShape=2;
 }
 -(void)spawnChosenShape{
+    if(firstShape==TRUE){
+        firstShape=FALSE;
+        pickShape=1;
+    }
     if (pickShape==1){
-        CCLOG(@"shapeis:%d",pickShape);
         [self spawnRect];
         currentShape=1;
     }
     else {
-        CCLOG(@"shapeis:%d",pickShape);
         [self spawnTri];
         currentShape=2;
     }
@@ -234,15 +264,21 @@ CGPoint touchLocation;
     [_physicsNode addChild:_currentTri];
     //yoooo
 }
+-(void)updateScore{
+    totalScoreVal=(normPointsInt+bonusPointsInt+totalShapes+stackedShapes)/2;
+    _scoreatm.string = [NSString stringWithFormat:@"%d", totalScoreVal];
+}
 - (void)update:(CCTime)delta {
-        totalScoreVal=(normPointsInt+bonusPointsInt+totalShapes+stackedShapes)/2;
-        _scoreatm.string = [NSString stringWithFormat:@"%d", totalScoreVal];
     if(!playButtonOrNah &&!gameEnd){
         if(currentShape==1){
             [self updateRect];
         }
         else if (currentShape==2){
             [self updateTri];
+        }
+        if (tappedInside==TRUE && _Taphere.parent){
+            [self removeChild:_Taphere];
+            tappedInside=FALSE;
         }
     }
 }
@@ -342,6 +378,20 @@ CGPoint touchLocation;
 }
 
 -(void)gameEnd{
+    if (totalScoreVal<40 & doneTutorial==FALSE){
+        tutorial=true;
+        orHereDoneTwice=0;
+    }
+    if (totalScoreVal>40){
+        doneTutorial=TRUE;
+        tutorial=FALSE;
+    }
+    if(_tap.parent){
+        [self removeChild:_tap];
+    }
+    if(_Taphere.parent){
+        [self removeChild:_Taphere];
+    }
     gameStarted=FALSE;
     playButtonOrNah=TRUE;
     currentShape=0;
@@ -366,20 +416,67 @@ CGPoint touchLocation;
     }
 
     _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/1.4, [[CCDirector sharedDirector] viewSize].height/2);
-    [self performSelector:@selector(playButton) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(playButton) withObject:nil afterDelay:0.8];
 }
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     touchLocation = [touch locationInNode:self];
-    if(!playButtonOrNah){
+    if(_tap.parent){
+        [self removeChild:_tap];
+    }
+    if(_Taphere.parent){
+        [self removeChild:_Taphere];
+    }
+    if(_Orhere.parent){
+        [self removeChild:_Orhere];
+    }
+    if(!playButtonOrNah && !gameEnd){
+        [self updateScore];
         [self shapeSpawn];
         [self decideShape];
+        if (tutorial==true) {
+             [self tapHere];
+        }
+        CCLOG(@"WTF MAN!");
     }
 }
-//    CGSize screenBounds = [[CCDirector sharedDirector] viewSize];
+-(void)tapHere{
+    _Taphere = (Taphere*) [CCBReader load:@"Taphere"];
+    _Taphere.position= touchLocation;
+    [self addChild:_Taphere];
+    [self Orhere];
+    if(orHereDoneTwice==0 || orHereDoneTwice==1){
+        [self performSelector:@selector(showOrHere) withObject:nil afterDelay:0.5];
+        orHereDoneTwice+=1;
+    }
+}
+-(void)Orhere{
+    CGFloat oppTouchX;
+    CGFloat oppTouchY;
+    _Orhere = (Orhere*) [CCBReader load:@"Orhere"];
+    if (touchLocation.x>200){
+        oppTouchX=touchLocation.x-100;
+    }
+    else{
+        oppTouchX=touchLocation.x+100;
+    }
+    if (touchLocation.y>150){
+        oppTouchY=touchLocation.y-100;
+    }
+    else{
+        oppTouchY=touchLocation.y+100;
+    }
+    CCLOG(@"xaxis:%f",touchLocation.x);
+    CCLOG(@"yaxis:%f",touchLocation.y);
+    CGPoint oppTouch = CGPointMake(oppTouchX, oppTouchY);
+    _Orhere.position= oppTouch;
+}
+-(void)showOrHere{
+    [self addChild:_Orhere];
+}//    CGSize screenBounds = [[CCDirector sharedDirector] viewSize];
 //    int screenHeight=screenBounds.height;
 //    int screenWidth=screenBounds.width;5
 //    if (screenWidth>_playRect1.boundingBox.size.width){
-//        _playRect1.scale+=0.004;
+//        _playRect1.scale+=0.004;ss
 //        _playRect2.scale+=0.004;
 //    }
 //    if (screenHeight>_playRect3.boundingBox.size.height){

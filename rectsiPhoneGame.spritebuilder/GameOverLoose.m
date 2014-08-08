@@ -18,13 +18,12 @@ extern int totalScoreVal;
 
 - (void)didLoadFromCCB
 {
-    CCLOG(@"GOING THROUGH GAMEOVER LOSE DID LOAD FROM CCB");
     _highScore.string = [NSString stringWithFormat:@"%d",highScore];
     _totalScore.string = [NSString stringWithFormat:@"%d", totalScoreVal];
     [self tip];
 }
 -(void)tip{
-    int tipNum=arc4random()%4;
+    int tipNum=arc4random()%6;
     if(totalScoreVal<40){
         tipNum=0;
     }
@@ -38,6 +37,12 @@ extern int totalScoreVal;
     }
     else if (tipNum==3){
         tipMsg= @"The bigger the shape the higher the points!";
+    }
+    else if (tipNum==4){
+        tipMsg= @"The border color is the color of the next shape!";
+    }
+    else if (tipNum==5){
+         tipMsg= @"The rotation direction alternates every shape!";
     }
     else if (tipNum==0){
         tipMsg= @"Don't collide with the border or any other shapes!!!";

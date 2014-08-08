@@ -12,6 +12,7 @@ extern BOOL playButtonOrNah;
 extern BOOL gameEnd;
 extern CGPoint touchLocation;
 int stackedShapes;
+BOOL tappedInside;
 @implementation ShapeGrow{
     BOOL gameStarted;
 }
@@ -21,15 +22,16 @@ int stackedShapes;
     self.userInteractionEnabled = TRUE;
 }
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    touchLocation = [touch locationInNode:self.mainscene];
+     touchLocation = [touch locationInNode:self.mainscene];
+    tappedInside=TRUE;
     if (!playButtonOrNah && !gameEnd){
         [self.mainscene shapeSpawn];
+        [self.mainscene updateScore];
         stackedShapes+=1;
     }
     else{
         stackedShapes=0;
     }
 }
-
 
 @end
