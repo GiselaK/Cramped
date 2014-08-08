@@ -12,6 +12,8 @@
 		806E0ED41992FFA60005FD5B /* tap.m in Sources */ = {isa = PBXBuildFile; fileRef = 806E0ED31992FFA60005FD5B /* tap.m */; };
 		806E0EDA1993E3560005FD5B /* Taphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 806E0ED91993E3560005FD5B /* Taphere.m */; };
 		806E0EDE1993E3640005FD5B /* Orhere.m in Sources */ = {isa = PBXBuildFile; fileRef = 806E0EDD1993E3640005FD5B /* Orhere.m */; };
+		806E0EE1199582BC0005FD5B /* failTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 806E0EE0199582BC0005FD5B /* failTutorial.m */; };
+		806E0EE4199582D40005FD5B /* passTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 806E0EE3199582D40005FD5B /* passTutorial.m */; };
 		8074A9A11977444B00835ED3 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8074A9A01977444B00835ED3 /* GameOver.m */; };
 		8077C3E2197DAC0500DFF999 /* BeginGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8077C3E1197DAC0500DFF999 /* BeginGame.m */; };
 		8087C53D1986CDB000CB94D9 /* startTri.m in Sources */ = {isa = PBXBuildFile; fileRef = 8087C53C1986CDB000CB94D9 /* startTri.m */; };
@@ -154,6 +156,10 @@
 		806E0ED91993E3560005FD5B /* Taphere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Taphere.m; sourceTree = "<group>"; };
 		806E0EDC1993E3640005FD5B /* Orhere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Orhere.h; sourceTree = "<group>"; };
 		806E0EDD1993E3640005FD5B /* Orhere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Orhere.m; sourceTree = "<group>"; };
+		806E0EDF199582BC0005FD5B /* failTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = failTutorial.h; sourceTree = "<group>"; };
+		806E0EE0199582BC0005FD5B /* failTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = failTutorial.m; sourceTree = "<group>"; };
+		806E0EE2199582D40005FD5B /* passTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = passTutorial.h; sourceTree = "<group>"; };
+		806E0EE3199582D40005FD5B /* passTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = passTutorial.m; sourceTree = "<group>"; };
 		8074A99F1977444B00835ED3 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
 		8074A9A01977444B00835ED3 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
 		8077C3E0197DAC0500DFF999 /* BeginGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeginGame.h; sourceTree = "<group>"; };
@@ -437,6 +443,10 @@
 				B7378992180767190076A88C /* MainScene.h */,
 				801D5ABB19915D1900116FE5 /* AppDelegate.m */,
 				B7378993180767190076A88C /* MainScene.m */,
+				806E0EDF199582BC0005FD5B /* failTutorial.h */,
+				806E0EE0199582BC0005FD5B /* failTutorial.m */,
+				806E0EE2199582D40005FD5B /* passTutorial.h */,
+				806E0EE3199582D40005FD5B /* passTutorial.m */,
 				806E0ED21992FFA60005FD5B /* tap.h */,
 				806E0ED31992FFA60005FD5B /* tap.m */,
 				809A2C821991C930007B0184 /* tutorial1.h */,
@@ -741,7 +751,9 @@
 				8074A9A11977444B00835ED3 /* GameOver.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				80AFFA53196C529100B02012 /* Pentagon.m in Sources */,
+				806E0EE4199582D40005FD5B /* passTutorial.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				806E0EE1199582BC0005FD5B /* failTutorial.m in Sources */,
 				80220FE1196DCF82006CC5D3 /* ShapeGrow.m in Sources */,
 				806E0EDE1993E3640005FD5B /* Orhere.m in Sources */,
 				809A2C841991C930007B0184 /* tutorial1.m in Sources */,
