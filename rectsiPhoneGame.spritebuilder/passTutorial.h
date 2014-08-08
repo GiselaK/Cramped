@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-
+@class MainScene;
 @interface passTutorial : CCNode {
     
 }

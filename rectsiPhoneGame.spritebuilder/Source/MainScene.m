@@ -19,6 +19,8 @@
 #import "tap.h"
 #import "Taphere.h"
 #import "Orhere.h"
+#import "passTutorial.h"
+#import "failTutorial.h"
 extern int stackedShapes;
 extern BOOL tappedInside;
 BOOL playButtonOrNah;
@@ -38,43 +40,43 @@ CGPoint touchLocation;
     BorderLine *_playRect2;
     BorderLine *_playRect3;
     BorderLine *_playRect4;
-    Rectangle *_currentRect;
-    Taphere *_Taphere;
-    Orhere *_Orhere;
     CCLabelTTF *_scoreatm;
+    CCPhysicsNode *_physicsNode;
     CGPoint border1pos;
     CGPoint border2pos;
     CGPoint border3pos;
     CGPoint border4pos;
-    CCPhysicsNode *_physicsNode;
     GameOver *_gameOver;
     GameOverLoose *_gameOverLoose;
     NSNumber *perhighScore;
+    Orhere *_Orhere;
+    Rectangle *_currentRect;
     startTri *_playTri;
     tap *_tap;
+    Taphere *_Taphere;
     Triangle *_currentTri;
     BOOL alreadyCollided;
     BOOL beginGameMode;
     BOOL doneTutorial;
     BOOL firstShape;
     BOOL gameStarted;
-    BOOL tutorialComplete;
-    BOOL large;
     BOOL insane;
-    BOOL XL;
-    BOOL tutorial;
+    BOOL large;
     BOOL OrHere;
-    int orHereDoneTwice;
     BOOL tappedOutside;
+    BOOL tutorial;
+    BOOL tutorialComplete;
+    BOOL XL;
     float bonusPoints;
     float shapeSize;
     int currentShape;
-    int pickShape;
+    int num;
     int numb;
+    int orHereDoneTwice;
+    int pickShape;
     int rotationAmt;
     int rotationDir;
     int rotationVal;
-    int num;
 
 }
 - (void)didLoadFromCCB {
