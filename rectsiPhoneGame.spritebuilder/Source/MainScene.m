@@ -42,14 +42,19 @@ CGPoint touchLocation;
     BorderLine *_playRect4;
     CCLabelTTF *_scoreatm;
     CCPhysicsNode *_physicsNode;
+    CGFloat oppTouchX;
+    CGFloat oppTouchY;
     CGPoint border1pos;
     CGPoint border2pos;
     CGPoint border3pos;
     CGPoint border4pos;
+    CGPoint oppTouch;
+    failTutorial *_failTutorial;
     GameOver *_gameOver;
     GameOverLoose *_gameOverLoose;
     NSNumber *perhighScore;
     Orhere *_Orhere;
+    passTutorial *_passTutorial;
     Rectangle *_currentRect;
     startTri *_playTri;
     tap *_tap;
@@ -61,6 +66,7 @@ CGPoint touchLocation;
     BOOL firstShape;
     BOOL gameStarted;
     BOOL insane;
+    BOOL justPassedTutorial;
     BOOL large;
     BOOL OrHere;
     BOOL tappedOutside;
@@ -128,6 +134,9 @@ CGPoint touchLocation;
     _playTri.mainscene=self;
     _playTri.scale=0.2;
     _playTri.rotation=90;
+    if(_playTri.parent){
+        [self removeChild:_playTri];
+    }
     [self addChild: _playTri];
 }
 -(void)playClicked{
@@ -150,6 +159,8 @@ CGPoint touchLocation;
     [self removeBeginGame];
     [self removeGameOver];
     [self removeGameOverLoose];
+    [self removeFailTutorial];
+    [self removePassedTutorial];
 }
 -(void)removeBeginGame{
     if (_beginGame.parent){
@@ -164,6 +175,16 @@ CGPoint touchLocation;
 -(void)removeGameOverLoose{
     if (_gameOverLoose.parent){
         [self removeChild:_gameOverLoose];
+    }
+}
+-(void)removeFailTutorial{
+    if (_failTutorial.parent){
+        [self removeChild:_failTutorial];
+    }
+}
+-(void)removePassedTutorial{
+    if (_passTutorial.parent){
+        [self removeChild:_passTutorial];
     }
 }
 -(void)addPhysics{
@@ -470,10 +491,16 @@ CGPoint touchLocation;
     currentShape=0;
 //    pickShape=2;
     if(!tutorial){
-        [self gameOverScreen];
+        if (justPassedTutorial==FALSE){
+            [self passedTutorial];
+            justPassedTutorial=TRUE;
+        }
+        else{
+          [self gameOverScreen];
+        }
     }
     else{
-        
+        [self failedTutorial];
     }
 }
 -(void)retryTutorial{
@@ -492,6 +519,13 @@ CGPoint touchLocation;
     [self removeTapInstruction];
     [self removeTapHereInstruction];
     [self removeOnHereInstruction];
+}
+-(void) passedTutorial{
+    [self setNewHighScore];
+    _passTutorial.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.5);
+    _passTutorial= (passTutorial*) [CCBReader load:@"passTutorial"];
+    [self addChild:_passTutorial];
+    [self showPlayButton];
 }
 -(void)removeTapInstruction{
     if(_tap.parent){
@@ -515,8 +549,10 @@ CGPoint touchLocation;
     else{
         [self loserScreen];
     }
-
-    _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/1.4, [[CCDirector sharedDirector] viewSize].height/2);
+    [self showPlayButton];
+}
+-(void)showPlayButton{
+    _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/1.4, [[CCDirector sharedDirector] viewSize].height/2.8);
     [self performSelector:@selector(playButton) withObject:nil afterDelay:0.8];
 }
 -(void)beatHighScore{
@@ -527,6 +563,12 @@ CGPoint touchLocation;
     highScore=totalScoreVal;
     perhighScore = [NSNumber numberWithInteger:highScore];
     [MGWU setObject:perhighScore forKey:@"perhighScore"];
+    [MGWU submitHighScore:highScore byPlayer:@"ashu" forLeaderboard:@"defaultLeaderboard"];
+    [MGWU getHighScoresForLeaderboard:@"defaultLeaderboard" withCallback:@selector(receivedScores:) onTarget:self];
+}
+- (void)receivedScores:(NSDictionary*)scores
+{
+    
 }
 -(void)newHighScoreScreen{
     _gameOver.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.5);
@@ -536,6 +578,12 @@ CGPoint touchLocation;
 -(void)loserScreen{
     _gameOverLoose= (GameOverLoose*) [CCBReader load:@"GameOverLoose"];
     [self addChild:_gameOverLoose];
+}
+-(void)failedTutorial{
+    _failTutorial.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.5);
+    _failTutorial= (failTutorial*) [CCBReader load:@"failTutorial"];
+    [self addChild:_failTutorial];
+    [self showPlayButton];
 }
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     touchLocation = [touch locationInNode:self];
@@ -563,24 +611,57 @@ CGPoint touchLocation;
 }
 -(void)positionOrHere{
     _Orhere = (Orhere*) [CCBReader load:@"Orhere"];
-    CGFloat oppTouchX;
-    CGFloat oppTouchY;
-    if (touchLocation.x>200){
-        oppTouchX=touchLocation.x-100;
+    if (orHereDoneTwice==0){
+        if (touchLocation.x>200){
+            oppTouchX=touchLocation.x-100;
+        }
+        else{
+            oppTouchX=touchLocation.x+100;
+        }
+        if (touchLocation.y>150){
+            oppTouchY=touchLocation.y-100;
+        }
+        else{
+            oppTouchY=touchLocation.y+100;
+        }
+        oppTouch = CGPointMake(oppTouchX, oppTouchY);
+        _Orhere.position= oppTouch;
     }
-    else{
-        oppTouchX=touchLocation.x+100;
+    else {
+        CGFloat oppTouchX2=0;
+        CGFloat oppTouchY2=0;
+        if(touchLocation.x>200 && oppTouchX>200){
+            if(touchLocation.x>oppTouchX){
+                oppTouchX2=oppTouchX-100;
+            }
+            else{
+                oppTouchX2=touchLocation.x-100;
+            }
+        }
+        else if (touchLocation.x<200 && oppTouchX<200){
+            if(touchLocation.x<oppTouchX){
+                oppTouchX2=oppTouchX+100;
+            }
+            else{
+                oppTouchX2=touchLocation.x+100;
+            }
+        }
+        else{
+            oppTouchX2=999;
+        }
+        if (touchLocation.y>150){
+            oppTouchY2=touchLocation.y-100;
+        }
+        else{
+            oppTouchY2=touchLocation.y+100;
+        }
+        if(oppTouchX2!=999){
+            oppTouch = CGPointMake(oppTouchX2, oppTouchY2);
+            _Orhere.position= oppTouch;
+        }
     }
-    if (touchLocation.y>150){
-        oppTouchY=touchLocation.y-100;
-    }
-    else{
-        oppTouchY=touchLocation.y+100;
-    }
-    CGPoint oppTouch = CGPointMake(oppTouchX, oppTouchY);
-    _Orhere.position= oppTouch;
-
 }
+
 -(void)showOrHere{
     if(_Orhere.parent){
         [self removeChild:_Orhere];

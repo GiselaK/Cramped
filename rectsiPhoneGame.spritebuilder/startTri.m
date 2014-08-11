@@ -16,9 +16,9 @@ extern BOOL playButtonOrNah;
 }
 -(void)onEnter{
     [super onEnter];
-    _startTri1.color=[CCColor greenColor];
-    _startTri2.color=[CCColor greenColor];
-    _startTri3.color=[CCColor greenColor];
+//    _startTri1.color=[CCColor greenColor];
+//    _startTri2.color=[CCColor greenColor];
+//    _startTri3.color=[CCColor greenColor];
     self.userInteractionEnabled=TRUE;
 }
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {

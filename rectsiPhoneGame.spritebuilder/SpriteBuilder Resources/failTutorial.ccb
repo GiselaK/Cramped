@@ -77,7 +77,7 @@
 						<key>value</key>
 						<array>
 							<real>-1217.6368408203125</real>
-							<real>-308.87252807617188</real>
+							<real>-306.87252807617188</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -177,8 +177,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-53.999969482421875</real>
-							<real>132.00003051757812</real>
+							<real>228.00003051757812</real>
+							<real>269.00003051757812</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -384,8 +384,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-35.999969482421875</real>
-							<real>44.000015258789062</real>
+							<real>226.00003051757812</real>
+							<real>210.00001525878906</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -422,8 +422,7 @@
 						<string>Text</string>
 						<key>value</key>
 						<array>
-							<string>A shape collided with another shape or the border
-				Try Again?!</string>
+							<string>The shapes hit each other (or the border)</string>
 							<false/>
 						</array>
 					</dict>
@@ -442,7 +441,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>20</real>
+							<real>25</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -473,7 +472,7 @@
 						<key>type</key>
 						<string>IntegerLabeled</string>
 						<key>value</key>
-						<integer>0</integer>
+						<integer>1</integer>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -564,7 +563,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string></string>
+		<string>failTutorial</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
