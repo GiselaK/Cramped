@@ -9,6 +9,7 @@
 #import "CCNode.h"
 #import "ShapeGrow.h"
 #import "startTri.h"
+#import <mgwuSDK/MGWU.h>
 
 @interface MainScene : CCNode <CCPhysicsCollisionDelegate> {
     NSTimer *TimeOfActiveUser;

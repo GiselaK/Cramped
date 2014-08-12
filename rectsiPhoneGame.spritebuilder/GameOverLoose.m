@@ -66,7 +66,8 @@ extern int totalScoreVal;
 -(void)usuck{
     int random=arc4random()%12;
     if (random==1 || random==2 || random==3 || random==4){
-        _yousuck.string=[NSString stringWithFormat:@"YOU SUCK!"];
+        _yousuck.string=[NSString stringWithFormat:@"F A I L"];
+        //DELETE LATER
     }
     else if (random==5 || random==6){
         _yousuck.string=[NSString stringWithFormat:@"Did you even tap the screen?"];
@@ -75,31 +76,36 @@ extern int totalScoreVal;
         _yousuck.string=[NSString stringWithFormat:@"That was just sad..."];
     }
     else if (random==8 || random==9){
-        _yousuck.string=[NSString stringWithFormat:@"This is when you should just give up..."];
+        _yousuck.string=[NSString stringWithFormat:@"Talent... U LACK IT"];
     }
     else if (random==10 || random==11){
-        _yousuck.string=[NSString stringWithFormat:@"Ughh your worthless"];
+        _yousuck.string=[NSString stringWithFormat:@"Ughh your hopeless..."];
+        // DELETE?
     }
     else{
-        _yousuck.fontSize=24;
-        _yousuck.string=[NSString stringWithFormat:@"Don't feel bad. A lot of people have no talent!"];
+        _yousuck.string=[NSString stringWithFormat:@"U BLIND?"];
+        //DELETE?
 
     }
 }
 -(void)damn{
     int random=arc4random()%6;
-    if (random==1 || random==2 || random==3){
+    if (random==1 || random==2){
       _yousuck.string=[NSString stringWithFormat:@"Hah So Close"];
     }
-    else if(random==4){
-        _yousuck.string=[NSString stringWithFormat:@"The shapes can't touch each other stupid"];
+    else if(random==3){
+        _yousuck.fontSize=23;
+        _yousuck.string=[NSString stringWithFormat:@"The shapes can't touch each other. Remember?"];
+    }
+    else if (random==4){
+        _yousuck.string=[NSString stringWithFormat:@"you could do your work... or you can play again"];
     }
     else {
-        _yousuck.string=[NSString stringWithFormat:@"LMAO"];
+          _yousuck.string=[NSString stringWithFormat:@"So close yet so far..."];
     }
 }
 -(void)ehh{
-    int random=arc4random()%14;
+    int random=arc4random()%10;
     if (random==1){
         _yousuck.string=[NSString stringWithFormat:@"ehh"];
     }
@@ -114,10 +120,6 @@ extern int totalScoreVal;
     }
     else if (random==7 || random==8){
         _yousuck.string=[NSString stringWithFormat:@"Not even close"];
-    }
-    else if (random==9 || random==10 || random==11){
-        _yousuck.string=[NSString stringWithFormat:@"You Aint Shitt"];
-        
     }
     else {
         _yousuck.string=[NSString stringWithFormat:@"Sucks to Suck"];

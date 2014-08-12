@@ -24,7 +24,7 @@
  */
 
 #import "cocos2d.h"
-
+#import <mgwuSDK/MGWU.h>
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 

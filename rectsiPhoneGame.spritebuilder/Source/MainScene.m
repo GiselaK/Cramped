@@ -107,16 +107,16 @@ CGPoint touchLocation;
     [self startScreen];
 }
 -(void) startScreen{
-    if(num!=1){
-        tutorial=true;
-        orHereDoneTwice=0;
-    }
-    num=1;
+//    if(num!=1){
+//        tutorial=true;
+//        orHereDoneTwice=0;
+//    }
+//    num=1;
     // temporary to stop tutorial since bool not saved officially yet
     NSNumber *currentHighScore = [MGWU objectForKey:@"perhighScore"];
     highScore = [currentHighScore intValue];
-    perhighScore=0;
-    highScore=0;
+//    perhighScore=0;
+//    highScore=0;
     //temproary to reset highscore
     [self playScreen];
     //Loads PlayScreen
@@ -141,11 +141,12 @@ CGPoint touchLocation;
 }
 -(void)playClicked{
     [self removePhysics];
-    [self removeSceen];
+    [self removeScreen];
     [self addPhysics];
     [self resetValuesNewGame];
     [self makeBorder];
-    if (tutorial==true) {
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"logged_in"]) {
+        tutorial=TRUE;
         firstShape=TRUE;
     }
     [self decideShape];
@@ -154,7 +155,7 @@ CGPoint touchLocation;
 -(void)removePhysics{
     [_physicsNode removeAllChildrenWithCleanup:YES];
 }
--(void)removeSceen{
+-(void)removeScreen{
     [self removeChild:_playTri];
     [self removeBeginGame];
     [self removeGameOver];
@@ -521,6 +522,7 @@ CGPoint touchLocation;
     [self removeOnHereInstruction];
 }
 -(void) passedTutorial{
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"logged_in"];
     [self setNewHighScore];
     _passTutorial.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.5);
     _passTutorial= (passTutorial*) [CCBReader load:@"passTutorial"];
@@ -552,7 +554,7 @@ CGPoint touchLocation;
     [self showPlayButton];
 }
 -(void)showPlayButton{
-    _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/1.4, [[CCDirector sharedDirector] viewSize].height/2.8);
+    _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/1.4, [[CCDirector sharedDirector] viewSize].height/2.3);
     [self performSelector:@selector(playButton) withObject:nil afterDelay:0.8];
 }
 -(void)beatHighScore{
@@ -563,15 +565,10 @@ CGPoint touchLocation;
     highScore=totalScoreVal;
     perhighScore = [NSNumber numberWithInteger:highScore];
     [MGWU setObject:perhighScore forKey:@"perhighScore"];
-    [MGWU submitHighScore:highScore byPlayer:@"ashu" forLeaderboard:@"defaultLeaderboard"];
-    [MGWU getHighScoresForLeaderboard:@"defaultLeaderboard" withCallback:@selector(receivedScores:) onTarget:self];
-}
-- (void)receivedScores:(NSDictionary*)scores
-{
-    
+
 }
 -(void)newHighScoreScreen{
-    _gameOver.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.5);
+    _gameOver.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.7);
     _gameOver= (GameOver*) [CCBReader load:@"GameOver"];
     [self addChild:_gameOver];
 }

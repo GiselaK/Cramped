@@ -25,7 +25,7 @@
 
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
-
+#import <mgwuSDK/MGWU.h>
 @interface AppController : CCAppDelegate
 {
 }

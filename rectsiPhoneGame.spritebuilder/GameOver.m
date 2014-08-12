@@ -15,7 +15,6 @@ extern int totalScoreVal;
 -(void)onEnter{
     [super onEnter];
     _newHighScore.string = [NSString stringWithFormat:@"%d", totalScoreVal];
-//    [MGWU submitHighScore:totalScoreVal byPlayer:@"ashu" forLeaderboard:@"defaultLeaderboard"];
 }
 
 @end
