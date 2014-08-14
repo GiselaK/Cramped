@@ -21,6 +21,8 @@
 #import "Orhere.h"
 #import "passTutorial.h"
 #import "failTutorial.h"
+#import "leaderboardScreen.h"
+#import "LBButton.h"
 extern int stackedShapes;
 extern BOOL tappedInside;
 BOOL playButtonOrNah;
@@ -40,6 +42,7 @@ CGPoint touchLocation;
     BorderLine *_playRect2;
     BorderLine *_playRect3;
     BorderLine *_playRect4;
+    LBButton *_LBButton;
     CCLabelTTF *_scoreatm;
     CCPhysicsNode *_physicsNode;
     CGFloat oppTouchX;
@@ -52,6 +55,7 @@ CGPoint touchLocation;
     failTutorial *_failTutorial;
     GameOver *_gameOver;
     GameOverLoose *_gameOverLoose;
+    leaderboardScreen *_leaderboardScreen;
     NSNumber *perhighScore;
     Orhere *_Orhere;
     passTutorial *_passTutorial;
@@ -115,8 +119,8 @@ CGPoint touchLocation;
     // temporary to stop tutorial since bool not saved officially yet
     NSNumber *currentHighScore = [MGWU objectForKey:@"perhighScore"];
     highScore = [currentHighScore intValue];
-//    perhighScore=0;
-//    highScore=0;
+    perhighScore=0;
+    highScore=0;
     //temproary to reset highscore
     [self playScreen];
     //Loads PlayScreen
@@ -144,10 +148,14 @@ CGPoint touchLocation;
     [self removeScreen];
     [self addPhysics];
     [self resetValuesNewGame];
+    [self hideLBButton];
     [self makeBorder];
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"logged_in"]) {
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialCheck"]) {
         tutorial=TRUE;
         firstShape=TRUE;
+    }
+    else{
+        tutorial=FALSE;
     }
     [self decideShape];
     [self tapAnywhere];
@@ -158,19 +166,25 @@ CGPoint touchLocation;
 -(void)removeScreen{
     [self removeChild:_playTri];
     [self removeBeginGame];
-    [self removeGameOver];
+    [self removeLeaderboard];
     [self removeGameOverLoose];
+    [self removeNewHighscore];
     [self removeFailTutorial];
     [self removePassedTutorial];
+}
+-(void)removeNewHighscore{
+    if (_gameOver.parent){
+        [self removeChild:_gameOver];
+    }
 }
 -(void)removeBeginGame{
     if (_beginGame.parent){
         [self removeChild:_beginGame];
     }
 }
--(void)removeGameOver{
-    if (_gameOver.parent){
-        [self removeChild:_gameOver];
+-(void)removeLeaderboard{
+    if (_leaderboardScreen.parent){
+        [self removeChild:_leaderboardScreen];
     }
 }
 -(void)removeGameOverLoose{
@@ -482,19 +496,29 @@ CGPoint touchLocation;
         rotationVal+=1.5;
     }
 }
-
+-(void)showLBButton{
+    if(_LBButton.parent){
+        [self removeChild:_LBButton];
+    }
+    [self addChild:_LBButton];
+    _LBButton.visible=YES;
+}
+-(void)hideLBButton{
+    _LBButton.visible=NO;
+}
 -(void)gameEnd{
-    [self retryTutorial];
-    [self completeTutorial];
-    [self removeInstructions];
+    if (tutorial==TRUE){
+        [self retryTutorial];
+        [self completeTutorial];
+        [self removeInstructions];
+    }
     gameStarted=FALSE;
     playButtonOrNah=TRUE;
     currentShape=0;
 //    pickShape=2;
     if(!tutorial){
-        if (justPassedTutorial==FALSE){
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialCheck"]){
             [self passedTutorial];
-            justPassedTutorial=TRUE;
         }
         else{
           [self gameOverScreen];
@@ -503,10 +527,10 @@ CGPoint touchLocation;
     else{
         [self failedTutorial];
     }
+    [self showLBButton];
 }
 -(void)retryTutorial{
     if (totalScoreVal<40 & doneTutorial==FALSE){
-        tutorial=true;
         orHereDoneTwice=0;
     }
 }
@@ -522,7 +546,7 @@ CGPoint touchLocation;
     [self removeOnHereInstruction];
 }
 -(void) passedTutorial{
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"logged_in"];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"tutorialCheck"];
     [self setNewHighScore];
     _passTutorial.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.5);
     _passTutorial= (passTutorial*) [CCBReader load:@"passTutorial"];
@@ -550,8 +574,8 @@ CGPoint touchLocation;
     }
     else{
         [self loserScreen];
+        [self showPlayButton];
     }
-    [self showPlayButton];
 }
 -(void)showPlayButton{
     _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/1.4, [[CCDirector sharedDirector] viewSize].height/2.3);
@@ -565,13 +589,25 @@ CGPoint touchLocation;
     highScore=totalScoreVal;
     perhighScore = [NSNumber numberWithInteger:highScore];
     [MGWU setObject:perhighScore forKey:@"perhighScore"];
-
+    int playernum=arc4random()%1000;
+    NSString *playernumb=[NSString stringWithFormat:@"player%i", playernum];
+    [MGWU submitHighScore:highScore byPlayer:playernumb forLeaderboard:@"CrampedLeaderboard"];
 }
+
+
 -(void)newHighScoreScreen{
     _gameOver.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.7);
     _gameOver= (GameOver*) [CCBReader load:@"GameOver"];
     [self addChild:_gameOver];
+    [self showPlayButton];
 }
+-(void)leaderboardScreen{
+    [self removeScreen];
+    _leaderboardScreen= (leaderboardScreen*) [CCBReader load:@"leaderboardScreen"];
+     _leaderboardScreen.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.7);
+    [self addChild:_leaderboardScreen];
+    [self showPlayButton];
+    }
 -(void)loserScreen{
     _gameOverLoose= (GameOverLoose*) [CCBReader load:@"GameOverLoose"];
     [self addChild:_gameOverLoose];

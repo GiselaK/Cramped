@@ -66,6 +66,7 @@ extern int totalScoreVal;
 -(void)usuck{
     int random=arc4random()%12;
     if (random==1 || random==2 || random==3 || random==4){
+        _yousuck.fontSize=28;
         _yousuck.string=[NSString stringWithFormat:@"F A I L"];
         //DELETE LATER
     }

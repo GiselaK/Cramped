@@ -1,16 +1,15 @@
 //
-//  failTutorial.h
+//  leaderboardScreen.h
 //  Cramped
 //
-//  Created by Gisela Kottmeier on 8/8/14.
+//  Created by Gisela Kottmeier on 8/12/14.
 //  Copyright 2014 Apportable. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-//@class MainScene;
-@interface failTutorial : CCNode {
+
+@interface leaderboardScreen : CCNode {
     
 }
-
 @end

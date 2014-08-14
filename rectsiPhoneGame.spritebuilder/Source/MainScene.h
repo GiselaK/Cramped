@@ -8,6 +8,7 @@
 
 #import "CCNode.h"
 #import "ShapeGrow.h"
+#import "LBButton.h"
 #import "startTri.h"
 #import <mgwuSDK/MGWU.h>
 
@@ -19,4 +20,5 @@
 - (void)updateTri;
 - (void)playClicked;
 - (void)updateScore;
+- (void)leaderboardScreen;
 @end

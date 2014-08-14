@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800FFDD8199A87730062AA13 /* leaderboardScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 800FFDD7199A87730062AA13 /* leaderboardScreen.m */; };
+		800FFDDC199AB0C50062AA13 /* LBRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 800FFDDB199AB0C50062AA13 /* LBRow.m */; };
+		801BCE4A199D22F800667EB3 /* LBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 801BCE49199D22F800667EB3 /* LBButton.m */; };
 		801D5ABC19915D1900116FE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 801D5ABB19915D1900116FE5 /* AppDelegate.m */; };
 		80220FE1196DCF82006CC5D3 /* ShapeGrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 80220FE0196DCF82006CC5D3 /* ShapeGrow.m */; };
 		8026BEAF19999A0300FF04BC /* mgwuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8026BE6819999A0200FF04BC /* mgwuSDK.framework */; };
@@ -96,7 +99,6 @@
 		80A6019619901DC3004C4C0D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A6019519901DC3004C4C0D /* SystemConfiguration.framework */; };
 		80A60198199024E3004C4C0D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A60197199024E3004C4C0D /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		80AFFA4F196C4ED700B02012 /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AFFA4E196C4ED700B02012 /* Triangle.m */; };
-		80AFFA53196C529100B02012 /* Pentagon.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AFFA52196C529100B02012 /* Pentagon.m */; };
 		80CB6DBF1966207600B466BE /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CB6DBE1966207600B466BE /* Rectangle.m */; };
 		80F7F6FF1992BC43000C047B /* GameOverLoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F7F6FE1992BC43000C047B /* GameOverLoose.m */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
@@ -147,6 +149,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		800FFDD6199A87730062AA13 /* leaderboardScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leaderboardScreen.h; sourceTree = "<group>"; };
+		800FFDD7199A87730062AA13 /* leaderboardScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leaderboardScreen.m; sourceTree = "<group>"; };
+		800FFDDA199AB0C50062AA13 /* LBRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBRow.h; sourceTree = "<group>"; };
+		800FFDDB199AB0C50062AA13 /* LBRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBRow.m; sourceTree = "<group>"; };
+		801BCE48199D22F700667EB3 /* LBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBButton.h; sourceTree = "<group>"; };
+		801BCE49199D22F800667EB3 /* LBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBButton.m; sourceTree = "<group>"; };
 		801D5ABB19915D1900116FE5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Source/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		80220FDF196DCF82006CC5D3 /* ShapeGrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeGrow.h; sourceTree = "<group>"; };
 		80220FE0196DCF82006CC5D3 /* ShapeGrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeGrow.m; sourceTree = "<group>"; };
@@ -248,8 +256,6 @@
 		80A60197199024E3004C4C0D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		80AFFA4D196C4ED700B02012 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		80AFFA4E196C4ED700B02012 /* Triangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Triangle.m; sourceTree = "<group>"; };
-		80AFFA51196C529100B02012 /* Pentagon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pentagon.h; sourceTree = "<group>"; };
-		80AFFA52196C529100B02012 /* Pentagon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pentagon.m; sourceTree = "<group>"; };
 		80CB6DBD1966207600B466BE /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rectangle.h; path = Source/Rectangle.h; sourceTree = "<group>"; };
 		80CB6DBE1966207600B466BE /* Rectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Rectangle.m; path = Source/Rectangle.m; sourceTree = "<group>"; };
 		80F7F6FD1992BC43000C047B /* GameOverLoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverLoose.h; sourceTree = "<group>"; };
@@ -406,20 +412,20 @@
 		807B1E94196E16AE00D578B7 /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
+				80CB6DBD1966207600B466BE /* Rectangle.h */,
 				80CB6DBE1966207600B466BE /* Rectangle.m */,
+				801BCE48199D22F700667EB3 /* LBButton.h */,
+				801BCE49199D22F800667EB3 /* LBButton.m */,
+				80AFFA4D196C4ED700B02012 /* Triangle.h */,
+				80AFFA4E196C4ED700B02012 /* Triangle.m */,
 				8087C53C1986CDB000CB94D9 /* startTri.m */,
 				8087C53B1986CDB000CB94D9 /* startTri.h */,
-				80CB6DBD1966207600B466BE /* Rectangle.h */,
 				80220FDF196DCF82006CC5D3 /* ShapeGrow.h */,
 				80220FE0196DCF82006CC5D3 /* ShapeGrow.m */,
 				806E0ED81993E3560005FD5B /* Taphere.h */,
 				806E0ED91993E3560005FD5B /* Taphere.m */,
 				806E0EDC1993E3640005FD5B /* Orhere.h */,
 				806E0EDD1993E3640005FD5B /* Orhere.m */,
-				80AFFA4D196C4ED700B02012 /* Triangle.h */,
-				80AFFA4E196C4ED700B02012 /* Triangle.m */,
-				80AFFA51196C529100B02012 /* Pentagon.h */,
-				80AFFA52196C529100B02012 /* Pentagon.m */,
 				B73789911807667A0076A88C /* Icons */,
 			);
 			name = Shapes;
@@ -443,6 +449,10 @@
 				B7378992180767190076A88C /* MainScene.h */,
 				801D5ABB19915D1900116FE5 /* AppDelegate.m */,
 				B7378993180767190076A88C /* MainScene.m */,
+				800FFDDA199AB0C50062AA13 /* LBRow.h */,
+				800FFDDB199AB0C50062AA13 /* LBRow.m */,
+				800FFDD6199A87730062AA13 /* leaderboardScreen.h */,
+				800FFDD7199A87730062AA13 /* leaderboardScreen.m */,
 				806E0EDF199582BC0005FD5B /* failTutorial.h */,
 				806E0EE0199582BC0005FD5B /* failTutorial.m */,
 				806E0EE2199582D40005FD5B /* passTutorial.h */,
@@ -561,7 +571,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B77F1CDE17B978D8009739AE /* Build configuration list for PBXNativeTarget "rectsiPhoneGame" */;
 			buildPhases = (
-				D2E0167A18D782EC00927430 /* Run Script */,
 				B77F1B2A17B978D7009739AE /* Sources */,
 				B77F1B2B17B978D7009739AE /* Frameworks */,
 				B77F1B2C17B978D7009739AE /* Resources */,
@@ -723,23 +732,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		D2E0167A18D782EC00927430 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "osascript -e 'tell application \"System Events\"' -e 'set ProcessList to name of every process' -e 'if \"SpriteBuilder\" is in ProcessList then' -e 'tell application \"SpriteBuilder\" to publish' -e 'end if' -e 'end tell'";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		B77F1B2A17B978D7009739AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -750,15 +742,17 @@
 				80A020EC19816FFA006E4626 /* BorderLine.m in Sources */,
 				8074A9A11977444B00835ED3 /* GameOver.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
-				80AFFA53196C529100B02012 /* Pentagon.m in Sources */,
 				806E0EE4199582D40005FD5B /* passTutorial.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				806E0EE1199582BC0005FD5B /* failTutorial.m in Sources */,
+				800FFDD8199A87730062AA13 /* leaderboardScreen.m in Sources */,
 				80220FE1196DCF82006CC5D3 /* ShapeGrow.m in Sources */,
 				806E0EDE1993E3640005FD5B /* Orhere.m in Sources */,
+				800FFDDC199AB0C50062AA13 /* LBRow.m in Sources */,
 				809A2C841991C930007B0184 /* tutorial1.m in Sources */,
 				801D5ABC19915D1900116FE5 /* AppDelegate.m in Sources */,
 				80CB6DBF1966207600B466BE /* Rectangle.m in Sources */,
+				801BCE4A199D22F800667EB3 /* LBButton.m in Sources */,
 				8087C53D1986CDB000CB94D9 /* startTri.m in Sources */,
 				80F7F6FF1992BC43000C047B /* GameOverLoose.m in Sources */,
 				8077C3E2197DAC0500DFF999 /* BeginGame.m in Sources */,

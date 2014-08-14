@@ -55,7 +55,8 @@
     [self setupCocos2dWithOptions:cocos2dSetup];
     [MGWU loadMGWU:@"gigicramped89"];
     [MGWU dark];
-    [MGWU setReminderMessage:@"A friend just challenged you in Cramped!"];
+    [MGWU setReminderMessage:@"One of your friends just beat your highscore in Cramped!"];
+    [MGWU useFacebook];
     return YES;
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
