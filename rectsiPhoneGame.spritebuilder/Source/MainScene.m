@@ -87,6 +87,7 @@ CGPoint touchLocation;
     int rotationAmt;
     int rotationDir;
     int rotationVal;
+    NSString *myName;
 
 }
 - (void)didLoadFromCCB {
@@ -589,11 +590,10 @@ CGPoint touchLocation;
     highScore=totalScoreVal;
     perhighScore = [NSNumber numberWithInteger:highScore];
     [MGWU setObject:perhighScore forKey:@"perhighScore"];
-    int playernum=arc4random()%1000;
-    NSString *playernumb=[NSString stringWithFormat:@"player%i", playernum];
-    [MGWU submitHighScore:highScore byPlayer:playernumb forLeaderboard:@"CrampedLeaderboard"];
+//    int playernum=arc4random()%1000;
+//    NSString *playernumb=[NSString stringWithFormat:@"player%i", playernum];
+    [MGWU submitHighScore:highScore byPlayer:myName forLeaderboard:@"CrampedLeaderboard"];
 }
-
 
 -(void)newHighScoreScreen{
     _gameOver.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.7);
