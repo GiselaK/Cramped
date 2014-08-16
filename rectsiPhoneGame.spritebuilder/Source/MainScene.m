@@ -648,7 +648,7 @@ CGPoint touchLocation;
 }
 -(void)showPlayButton{
     _playTri.scale=1;
-    _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/1.6, [[CCDirector sharedDirector] viewSize].height/2.6);
+    _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/1.4, [[CCDirector sharedDirector] viewSize].height/2.6);
     [self performSelector:@selector(playButton) withObject:nil afterDelay:0.3];
 }
 -(void)beatHighScore{
@@ -699,7 +699,7 @@ CGPoint touchLocation;
     }
 -(void)loserScreen{
     _LBButton.position=ccp([[CCDirector sharedDirector] viewSize].width/1.3, [[CCDirector sharedDirector] viewSize].height/5.5);
-      _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/1.4, [[CCDirector sharedDirector] viewSize].height/10);
+      _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/1.3, [[CCDirector sharedDirector] viewSize].height/10);
     _gameOverLoose= (GameOverLoose*) [CCBReader load:@"GameOverLoose"];
     [self addChild:_gameOverLoose];
 }
