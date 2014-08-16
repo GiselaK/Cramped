@@ -182,11 +182,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>426.05484008789062</real>
-							<real>449.84844970703125</real>
+							<real>1.0651371479034424</real>
+							<real>1.1246211528778076</real>
 							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -422,11 +422,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>417.94183349609375</real>
-							<real>349.04080200195312</real>
+							<real>1.0448546409606934</real>
+							<real>0.87260198593139648</real>
 							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -606,6 +606,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>

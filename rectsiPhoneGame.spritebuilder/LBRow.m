@@ -8,13 +8,15 @@
 
 #import "LBRow.h"
 extern NSString *namae;
+extern int rankNum;
 extern int rankedScore;
 @implementation LBRow{
     CCLabelTTF *_name;
     CCLabelTTF *_rankedScoreLabel;
-//    CCSprite *_LBTriLineOne;
-//    CCSprite *_LBTriLineTwo;
-//    CCSprite *_LBTriLineThree;
+    CCLabelTTF *_rankRole;
+    CCSprite *_LBTriLineOne;
+    CCSprite *_LBTriLineTwo;
+    CCSprite *_LBTriLineThree;
     CCSprite *_LBRectLineOne;
     CCSprite *_LBRectLineTwo;
     CCSprite *_LBRectLineThree;
@@ -22,15 +24,16 @@ extern int rankedScore;
 }
 -(void)onEnter{
     [super onEnter];
-//    _LBTriLineOne.color=[CCColor greenColor];
-//    _LBTriLineTwo.color=[CCColor greenColor];
-//    _LBTriLineThree.color=[CCColor greenColor];
+    _LBTriLineOne.color=[CCColor greenColor];
+    _LBTriLineTwo.color=[CCColor greenColor];
+    _LBTriLineThree.color=[CCColor greenColor];
     _LBRectLineOne.color=[CCColor blueColor];
     _LBRectLineTwo.color=[CCColor blueColor];
     _LBRectLineThree.color=[CCColor blueColor];
     _LBRectLineFour.color=[CCColor blueColor];
     _name.string=[NSString stringWithFormat:@"%@",namae];
     _rankedScoreLabel.string=[NSString stringWithFormat:@"%i",rankedScore];
+    _rankRole.string=[NSString stringWithFormat:@"%i",rankNum];
 //    _name.string=[NSString stringWithFormat:@"hi"];
     CCLOG(@"%@",namae);
 }

@@ -56,7 +56,7 @@
     [MGWU loadMGWU:@"gigicramped89"];
     [MGWU dark];
     [MGWU setReminderMessage:@"One of your friends just beat your highscore in Cramped!"];
-    [MGWU useFacebook];
+//    [MGWU useFacebook];
     return YES;
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
