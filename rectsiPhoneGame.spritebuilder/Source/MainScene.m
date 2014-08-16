@@ -620,7 +620,6 @@ CGPoint touchLocation;
     _passTutorial.position=ccp([[CCDirector sharedDirector] viewSize].width/2, [[CCDirector sharedDirector] viewSize].height/2.5);
     _passTutorial= (passTutorial*) [CCBReader load:@"passTutorial"];
     [self addChild:_passTutorial];
-      _playTri.position = ccp([[CCDirector sharedDirector] viewSize].width/1.4, [[CCDirector sharedDirector] viewSize].height/2.6);
      [self performSelector:@selector(playButton) withObject:nil afterDelay:0.3];
 }
 -(void)removeTapInstruction{

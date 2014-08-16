@@ -112,7 +112,6 @@
 		8026BEF419999A0300FF04BC /* send-field-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 8026BEAE19999A0300FF04BC /* send-field-landscape.png */; };
 		8046A4D8199F01D0001D5206 /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 8046A4D7199F01D0001D5206 /* Default~iphone.png */; };
 		8046A4DA199F01ED001D5206 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8046A4D9199F01ED001D5206 /* Default.png */; };
-		805CA682199EB90800E04F62 /* rankingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 805CA681199EB90800E04F62 /* rankingLabel.m */; };
 		806E0ED41992FFA60005FD5B /* tap.m in Sources */ = {isa = PBXBuildFile; fileRef = 806E0ED31992FFA60005FD5B /* tap.m */; };
 		806E0EDA1993E3560005FD5B /* Taphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 806E0ED91993E3560005FD5B /* Taphere.m */; };
 		806E0EDE1993E3640005FD5B /* Orhere.m in Sources */ = {isa = PBXBuildFile; fileRef = 806E0EDD1993E3640005FD5B /* Orhere.m */; };
@@ -123,6 +122,7 @@
 		8087C53D1986CDB000CB94D9 /* startTri.m in Sources */ = {isa = PBXBuildFile; fileRef = 8087C53C1986CDB000CB94D9 /* startTri.m */; };
 		809A2C841991C930007B0184 /* tutorial1.m in Sources */ = {isa = PBXBuildFile; fileRef = 809A2C831991C930007B0184 /* tutorial1.m */; };
 		80A020EC19816FFA006E4626 /* BorderLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A020EB19816FFA006E4626 /* BorderLine.m */; };
+		80A584B4199F78EF00281A41 /* rankingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A584B3199F78EF00281A41 /* rankingLabel.m */; };
 		80A6018E19901D95004C4C0D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A6018D19901D95004C4C0D /* libz.dylib */; };
 		80A6019019901DA3004C4C0D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A6018F19901DA3004C4C0D /* MessageUI.framework */; };
 		80A6019219901DAC004C4C0D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A6019119901DAC004C4C0D /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -275,8 +275,6 @@
 		8026BEAE19999A0300FF04BC /* send-field-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-field-landscape.png"; sourceTree = "<group>"; };
 		8046A4D7199F01D0001D5206 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		8046A4D9199F01ED001D5206 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		805CA680199EB90800E04F62 /* rankingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rankingLabel.h; path = ../../../Music/rankingLabel.h; sourceTree = "<group>"; };
-		805CA681199EB90800E04F62 /* rankingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = rankingLabel.m; path = ../../../Music/rankingLabel.m; sourceTree = "<group>"; };
 		806E0ED21992FFA60005FD5B /* tap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tap.h; sourceTree = "<group>"; };
 		806E0ED31992FFA60005FD5B /* tap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tap.m; sourceTree = "<group>"; };
 		806E0ED81993E3560005FD5B /* Taphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Taphere.h; sourceTree = "<group>"; };
@@ -297,6 +295,8 @@
 		809A2C831991C930007B0184 /* tutorial1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tutorial1.m; sourceTree = "<group>"; };
 		80A020EA19816FFA006E4626 /* BorderLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderLine.h; sourceTree = "<group>"; };
 		80A020EB19816FFA006E4626 /* BorderLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderLine.m; sourceTree = "<group>"; };
+		80A584B2199F78EF00281A41 /* rankingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rankingLabel.h; sourceTree = "<group>"; };
+		80A584B3199F78EF00281A41 /* rankingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rankingLabel.m; sourceTree = "<group>"; };
 		80A6018D19901D95004C4C0D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		80A6018F19901DA3004C4C0D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		80A6019119901DAC004C4C0D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -537,8 +537,6 @@
 				800FFDDB199AB0C50062AA13 /* LBRow.m */,
 				800FFDD6199A87730062AA13 /* leaderboardScreen.h */,
 				800FFDD7199A87730062AA13 /* leaderboardScreen.m */,
-				805CA680199EB90800E04F62 /* rankingLabel.h */,
-				805CA681199EB90800E04F62 /* rankingLabel.m */,
 				806E0EDF199582BC0005FD5B /* failTutorial.h */,
 				806E0EE0199582BC0005FD5B /* failTutorial.m */,
 				806E0EE2199582D40005FD5B /* passTutorial.h */,
@@ -577,6 +575,8 @@
 		B77F1B2517B978D7009739AE = {
 			isa = PBXGroup;
 			children = (
+				80A584B2199F78EF00281A41 /* rankingLabel.h */,
+				80A584B3199F78EF00281A41 /* rankingLabel.m */,
 				B737893C1807616C0076A88C /* Source */,
 				B77F1B4617B978D7009739AE /* Resources */,
 				9222E2B918734FF800A246C7 /* libs */,
@@ -829,7 +829,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				805CA682199EB90800E04F62 /* rankingLabel.m in Sources */,
+				80A584B4199F78EF00281A41 /* rankingLabel.m in Sources */,
 				806E0EDA1993E3560005FD5B /* Taphere.m in Sources */,
 				80AFFA4F196C4ED700B02012 /* Triangle.m in Sources */,
 				80A020EC19816FFA006E4626 /* BorderLine.m in Sources */,
