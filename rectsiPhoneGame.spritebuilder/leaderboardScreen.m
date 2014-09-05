@@ -34,16 +34,18 @@ int rankedScore;
 
 }
 - (void)swipeDown {
-    screenPos-=230;
-     self.position=ccp(([[CCDirector sharedDirector] viewSize].width)/2, ([[CCDirector sharedDirector] viewSize].height/2+screenPos));
+    if (screenPos>0){
+        screenPos-=[[CCDirector sharedDirector] viewSize].width/1.92;
+        self.position=ccp(([[CCDirector sharedDirector] viewSize].width)/2, ([[CCDirector sharedDirector] viewSize].height/2+screenPos));
+    }
 //    [MGWU getHig0hScoresForLeaderboard:@"CrampedLeaderboard" withCallback:@selector(receivedScores:) onTarget:self];
-    CCLOG(@"swipinDOWN");
 }
 - (void)swipeUp {
-    screenPos+=230;
-    self.position=ccp(([[CCDirector sharedDirector] viewSize].width)/2, ([[CCDirector sharedDirector] viewSize].height/2+screenPos));
+    if(screenPos<9*([[CCDirector sharedDirector] viewSize].width/1.92)){
+        screenPos+=[[CCDirector sharedDirector] viewSize].width/1.92;
+        self.position=ccp(([[CCDirector sharedDirector] viewSize].width)/2, ([[CCDirector sharedDirector] viewSize].height/2+screenPos));
+    }
 //    [MGWU getHighScoresForLeaderboard:@"CrampedLeaderboard" withCallback:@selector(receivedSc2)ores:) onTarget:self];
-    CCLOG(@"swipinUP");
 }
 
 - (void)receivedScores:(NSDictionary*)scores
@@ -55,19 +57,22 @@ int rankedScore;
     NSString *userName=@"";
     NSString *scoreResult=@"";
     rankNum=0;
+    screenPos=0;
     int addBack = 0;
-    if(scoreArray.count>=50){
+    if(scoreArray.count>=50 ){
         for(int x=0; x<50;x++){
-            yPos+=0.5;
+            rankNum+=1;
             userName=@"";
             scoreResult=@"";
             userName=[userName stringByAppendingString:[[scoreArray objectAtIndex:x]objectForKey:@"name"]];
             scoreResult=[scoreResult stringByAppendingString:[[scoreArray objectAtIndex:x]objectForKey:@"score"]];
+            namae=userName;
             rankedScore=scoreResult.intValue;
-              namae=userName;
             _LBRow = (LBRow*) [CCBReader load:@"LBRow"];
             _LBRow.scale=0.2;
-            _LBRow.position=ccp([[CCDirector sharedDirector] viewSize].width/3, [[CCDirector sharedDirector] viewSize].height/yPos);
+            _LBRow.position=ccp(([[CCDirector sharedDirector] viewSize].width*-1)*0.2, ([[CCDirector sharedDirector] viewSize].height*-1)+yPos);
+            yPos-=50;
+            addBack+=50;
             [self addChild:_LBRow];
         }
     }
@@ -90,9 +95,6 @@ int rankedScore;
         yPos+=addBack;
         
     }
-    //    scores[@"user"][@"name"];//    NSString *LBScore=scores[@"all"]["@score"];
-//    scores[@"user"][@"score"];
-    CCLOG(@"user:%@",userName);
 }
 
 @end

@@ -1726,6 +1726,7 @@
 					"$(inherited)",
 					"/Users/giselakottmeier/Downloads/Tutorial-First-iPhone-Game-emptyTemplate/mgwuSDK.embeddedframework",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/external/ObjectAL",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1772,6 +1773,7 @@
 					"$(inherited)",
 					"/Users/giselakottmeier/Downloads/Tutorial-First-iPhone-Game-emptyTemplate/mgwuSDK.embeddedframework",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/external/ObjectAL",
 				);
 				GCC_THUMB_SUPPORT = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
